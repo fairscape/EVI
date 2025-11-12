@@ -289,7 +289,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/EVI#Computation"/>
         <rdfs:range rdf:resource="https://w3id.org/EVI#MLModel"/>
         <rdfs:comment>The property usedModel is a subproperty of used where domain is Computation and range is MLModel. This is common in fine-tuning or inference tasks.</rdfs:comment>
-        <rdfs:label>usedModel</rdfs:label>
+        <rdfs:label>usedMLModel</rdfs:label>
     </owl:ObjectProperty>
 
     
