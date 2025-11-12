@@ -281,26 +281,8 @@
         <rdfs:comment>Reverse of describes property.</rdfs:comment>
         <rdfs:label>describedBy</rdfs:label>
     </owl:ObjectProperty>
-
-    <!-- https://w3id.org/EVI#usedMLModel -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#usedMLModel">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#used"/>
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#Computation"/>
-        <rdfs:range rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:comment>The property usedModel is a subproperty of used where domain is Computation and range is MLModel. This is common in fine-tuning or inference tasks.</rdfs:comment>
-        <rdfs:label>usedMLModel</rdfs:label>
-    </owl:ObjectProperty>
-
     
-    <!-- https://w3id.org/EVI#mlModelUsedBy -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#mlModelUsedBy">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#usedBy"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/EVI#usedMLModel"/>
-        <rdfs:comment>Reverse of usedModel property.</rdfs:comment>
-        <rdfs:label>mlModelUsedBy</rdfs:label>
-    </owl:ObjectProperty>
 
     <!-- https://w3id.org/EVI#describes -->
 
@@ -428,6 +410,17 @@
     
 
 
+    <!-- https://w3id.org/EVI#mlModelUsedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#mlModelUsedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#usedBy"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/EVI#usedMLModel"/>
+        <rdfs:comment>Reverse of usedModel property.</rdfs:comment>
+        <rdfs:label>mlModelUsedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/EVI#packagedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/EVI#packagedBy">
@@ -545,6 +538,18 @@
         <rdfs:range rdf:resource="https://w3id.org/EVI#Dataset"/>
         <rdfs:comment>The property usedDataset is a subproperty of used where domain is Computation and range is Dataset.</rdfs:comment>
         <rdfs:label>usedDataset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#usedMLModel -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#usedMLModel">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#used"/>
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#Computation"/>
+        <rdfs:range rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:comment>The property usedModel is a subproperty of used where domain is Computation and range is MLModel. This is common in fine-tuning or inference tasks.</rdfs:comment>
+        <rdfs:label>usedMLModel</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -826,6 +831,17 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     
 
 
+    <!-- https://w3id.org/EVI#activationsMillions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#activationsMillions">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>A measure of the memory required during a forward pass, in millions of activation values.</rdfs:comment>
+        <rdfs:label>activationsMillions</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/EVI#additionalDocumentation -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#additionalDocumentation">
@@ -878,6 +894,72 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     
 
 
+    <!-- https://w3id.org/EVI#framework -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#framework">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The machine learning framework used to create the model (e.g., PyTorch, TensorFlow).</rdfs:comment>
+        <rdfs:label>framework</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#gmacs -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#gmacs">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Giga multiply-accumulate operations (GMACs), a measure of computational cost.</rdfs:comment>
+        <rdfs:label>gmacs</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#inputSize -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#inputSize">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The expected input size or shape for the model.</rdfs:comment>
+        <rdfs:label>inputSize</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#modelFormat -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#modelFormat">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The file format of the model (e.g., ONNX, HDF5, Pickle).</rdfs:comment>
+        <rdfs:label>modelFormat</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#modelType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#modelType">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type or category of the machine learning model (e.g., Classification, Regression, Generative).</rdfs:comment>
+        <rdfs:label>modelType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#parametersMillions -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#parametersMillions">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The number of trainable parameters in the model, in millions.</rdfs:comment>
+        <rdfs:label>parametersMillions</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/EVI#publicationVenue -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#publicationVenue">
@@ -905,60 +987,6 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
         <rdfs:label>state</rdfs:label>
     </owl:DatatypeProperty>
     
-
-
-    <!-- MLMODEL PROPERTIES -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#modelType">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The type or category of the machine learning model (e.g., Classification, Regression, Generative).</rdfs:comment>
-        <rdfs:label>modelType</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#framework">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The machine learning framework used to create the model (e.g., PyTorch, TensorFlow).</rdfs:comment>
-        <rdfs:label>framework</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#modelFormat">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The file format of the model (e.g., ONNX, HDF5, Pickle).</rdfs:comment>
-        <rdfs:label>modelFormat</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#inputSize">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The expected input size or shape for the model.</rdfs:comment>
-        <rdfs:label>inputSize</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#parametersMillions">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>The number of trainable parameters in the model, in millions.</rdfs:comment>
-        <rdfs:label>parametersMillions</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#gmacs">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Giga multiply-accumulate operations (GMACs), a measure of computational cost.</rdfs:comment>
-        <rdfs:label>gmacs</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#activationsMillions">
-        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>A measure of the memory required during a forward pass, in millions of activation values.</rdfs:comment>
-        <rdfs:label>activationsMillions</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <!-- NEW MLMODEL PROPERTIES END -->
 
 
     <!-- 
@@ -1187,6 +1215,16 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     
 
 
+    <!-- https://w3id.org/EVI#MLModel -->
+
+    <owl:Class rdf:about="https://w3id.org/EVI#MLModel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+        <rdfs:comment xml:lang="en">An MLModel is a computational model that has been trained on data to perform a specific task. It is a digital object that captures the learned parameters and architecture resulting from a machine learning training process (Computation).</rdfs:comment>
+        <rdfs:label xml:lang="en">MLModel</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/EVI#Method -->
 
     <owl:Class rdf:about="https://w3id.org/EVI#Method">
@@ -1197,14 +1235,24 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     
 
 
-    <!-- https://w3id.org/EVI#MLModel -->
+    <!-- https://w3id.org/EVI#Package -->
 
-    <owl:Class rdf:about="https://w3id.org/EVI#MLModel">
+    <owl:Class rdf:about="https://w3id.org/EVI#Package">
         <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#DigitalObject"/>
-        <rdfs:comment xml:lang="en">An MLModel is a computational model that has been trained on data to perform a specific task. It is a digital object that captures the learned parameters and architecture resulting from a machine learning training process (Computation).</rdfs:comment>
-        <rdfs:label xml:lang="en">MLModel</rdfs:label>
+        <rdfs:comment>Metadata associated with digital resources that may be packaged together or referenced.</rdfs:comment>
+        <rdfs:label>Package</rdfs:label>
     </owl:Class>
+    
 
+
+    <!-- https://w3id.org/EVI#ROCrate -->
+
+    <owl:Class rdf:about="https://w3id.org/EVI#ROCrate">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#Package"/>
+        <rdfs:comment>An approach to packaging research data with their metadata.</rdfs:comment>
+        <rdfs:label>ROCrate</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- https://w3id.org/EVI#Reference -->
@@ -1339,9 +1387,9 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
         <rdfs:comment>An entity responsible for making the resource. Examples of a creator include a person, an organization, or a service i.e. a SoftwareAgent. Typically, the name of a creator should be used to indicate the entity.</rdfs:comment>
         <rdfs:label>terms:creator</rdfs:label>
     </rdf:Description>
-
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
