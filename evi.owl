@@ -282,9 +282,9 @@
         <rdfs:label>describedBy</rdfs:label>
     </owl:ObjectProperty>
 
-    <!-- https://w3id.org/EVI#usedModel -->
+    <!-- https://w3id.org/EVI#usedMLModel -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#usedModel">
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#usedMLModel">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#used"/>
         <rdfs:domain rdf:resource="https://w3id.org/EVI#Computation"/>
         <rdfs:range rdf:resource="https://w3id.org/EVI#MLModel"/>
@@ -293,13 +293,13 @@
     </owl:ObjectProperty>
 
     
-    <!-- https://w3id.org/EVI#modelUsedBy -->
+    <!-- https://w3id.org/EVI#mlModelUsedBy -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#modelUsedBy">
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#mlModelUsedBy">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#usedBy"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/EVI#usedModel"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/EVI#usedMLModel"/>
         <rdfs:comment>Reverse of usedModel property.</rdfs:comment>
-        <rdfs:label>modelUsedBy</rdfs:label>
+        <rdfs:label>mlModelUsedBy</rdfs:label>
     </owl:ObjectProperty>
 
     <!-- https://w3id.org/EVI#describes -->
