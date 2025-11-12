@@ -13,19 +13,19 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/EVI">
-        <owl:versionIRI rdf:resource="https://w3id.org/EVI/1.1"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/EVI/1.2"/>
         <terms:contributor rdf:resource="https://github.com/jniestroy"/>
         <terms:contributor rdf:resource="https://github.com/mlev71"/>
         <terms:created xml:lang="en">2020-07-27</terms:created>
         <terms:description xml:lang="en">The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas&apos; Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2).</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/"/>
-        <terms:modified xml:lang="en">2023-05-12</terms:modified>
+        <terms:modified xml:lang="en">2025-11-07</terms:modified>
         <terms:title xml:lang="en">EVI: Evidence Graph Ontology</terms:title>
         <vann:preferredNamespacePrefix>evi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="http://w3id.org/EVI"/>
-        <owl:priorVersion xml:lang="en">1.0</owl:priorVersion>
+        <owl:priorVersion xml:lang="en">1.1</owl:priorVersion>
         <owl:versionIRI xml:lang="en">http://www.w3.org/2002/07/owl</owl:versionIRI>
-        <owl:versionInfo xml:lang="en">1.1</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">1.2</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -281,8 +281,26 @@
         <rdfs:comment>Reverse of describes property.</rdfs:comment>
         <rdfs:label>describedBy</rdfs:label>
     </owl:ObjectProperty>
-    
 
+    <!-- https://w3id.org/EVI#usedMLModel -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#usedMLModel">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#used"/>
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#Computation"/>
+        <rdfs:range rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:comment>The property usedModel is a subproperty of used where domain is Computation and range is MLModel. This is common in fine-tuning or inference tasks.</rdfs:comment>
+        <rdfs:label>usedMLModel</rdfs:label>
+    </owl:ObjectProperty>
+
+    
+    <!-- https://w3id.org/EVI#mlModelUsedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#mlModelUsedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#usedBy"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/EVI#usedMLModel"/>
+        <rdfs:comment>Reverse of usedModel property.</rdfs:comment>
+        <rdfs:label>mlModelUsedBy</rdfs:label>
+    </owl:ObjectProperty>
 
     <!-- https://w3id.org/EVI#describes -->
 
@@ -499,7 +517,7 @@
     <!-- https://w3id.org/EVI#used -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/EVI#used">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#directlySupports"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#directlySupportedBy"/>
         <owl:inverseOf rdf:resource="https://w3id.org/EVI#usedBy"/>
         <rdfs:domain rdf:resource="https://www.w3.org/ns/prov#Activity"/>
         <rdfs:range rdf:resource="https://www.w3.org/ns/prov#Entity"/>
@@ -512,7 +530,7 @@
     <!-- https://w3id.org/EVI#usedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/EVI#usedBy">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#directlySupportedBy"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/EVI#directlySupports"/>
         <rdfs:comment>Reverse of used property.</rdfs:comment>
         <rdfs:label>usedBy</rdfs:label>
     </owl:ObjectProperty>
@@ -889,6 +907,60 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
     
 
 
+    <!-- MLMODEL PROPERTIES -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#modelType">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The type or category of the machine learning model (e.g., Classification, Regression, Generative).</rdfs:comment>
+        <rdfs:label>modelType</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#framework">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The machine learning framework used to create the model (e.g., PyTorch, TensorFlow).</rdfs:comment>
+        <rdfs:label>framework</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#modelFormat">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The file format of the model (e.g., ONNX, HDF5, Pickle).</rdfs:comment>
+        <rdfs:label>modelFormat</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#inputSize">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The expected input size or shape for the model.</rdfs:comment>
+        <rdfs:label>inputSize</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#parametersMillions">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The number of trainable parameters in the model, in millions.</rdfs:comment>
+        <rdfs:label>parametersMillions</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#gmacs">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Giga multiply-accumulate operations (GMACs), a measure of computational cost.</rdfs:comment>
+        <rdfs:label>gmacs</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/EVI#activationsMillions">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#MLModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>A measure of the memory required during a forward pass, in millions of activation values.</rdfs:comment>
+        <rdfs:label>activationsMillions</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- NEW MLMODEL PROPERTIES END -->
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1125,6 +1197,16 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     
 
 
+    <!-- https://w3id.org/EVI#MLModel -->
+
+    <owl:Class rdf:about="https://w3id.org/EVI#MLModel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+        <rdfs:comment xml:lang="en">An MLModel is a computational model that has been trained on data to perform a specific task. It is a digital object that captures the learned parameters and architecture resulting from a machine learning training process (Computation).</rdfs:comment>
+        <rdfs:label xml:lang="en">MLModel</rdfs:label>
+    </owl:Class>
+
+
+
     <!-- https://w3id.org/EVI#Reference -->
 
     <owl:Class rdf:about="https://w3id.org/EVI#Reference">
@@ -1257,76 +1339,9 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
         <rdfs:comment>An entity responsible for making the resource. Examples of a creator include a person, an organization, or a service i.e. a SoftwareAgent. Typically, the name of a creator should be used to indicate the entity.</rdfs:comment>
         <rdfs:label>terms:creator</rdfs:label>
     </rdf:Description>
-    
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Rules
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="https://w3id.org/EVI#computation">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/EVI#data1">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/EVI#data2">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/EVI#usedDataset"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/EVI#computation"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/EVI#data1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://w3id.org/EVI#generatedBy"/>
-                                <swrl:argument1 rdf:resource="https://w3id.org/EVI#data2"/>
-                                <swrl:argument2 rdf:resource="https://w3id.org/EVI#computation"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/EVI#supports"/>
-                        <swrl:argument1 rdf:resource="https://w3id.org/EVI#data1"/>
-                        <swrl:argument2 rdf:resource="https://w3id.org/EVI#data2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
