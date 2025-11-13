@@ -64,16 +64,16 @@
             <!--TITLE-->
             <h1>EVI: Evidence Graph Ontology</h1>
             <!--RELEASE INFO-->
-            <h2>Release 2023-05-15</h2>
+            <h2>Release 2025-11-13</h2>
 
 
             <dl>
                 <!--VERSIONS: CURRENT, PREVIOUS, REVISION-->
                 <dt>Current version:</dt>
-                <dd><a href="https://github.com/EvidenceGraph/EVI/blob/master/Ontology/versions/v1.1/evi.owl">1.1</a>
+                <dd><a href="https://github.com/fairscape/EVI/blob/master/Ontology/versions/v1.2/evi.owl">1.2</a>
                 </dd>
                 <dt>Previous version:</dt>
-                <dd><a href="https://github.com/EvidenceGraph/EVI/blob/master/Ontology/versions/v1.0/evi.owl">1.0</a>
+                <dd><a href="https://github.com/fairscape/EVI/blob/master/Ontology/versions/v1.1/evi.owl">1.1</a>
                 </dd>
                 <!--dt>Revision:</dt>
                     <dd>1.1</dd-->
@@ -138,7 +138,7 @@
                 model in EVI is expressed using OWL2 Web Ontology Language.
             </span>
             <p style="text-align: center;"><span>The OWL encoding of EVI is available
-                    <a href="https://github.com/EvidenceGraph/EVI/blob/master/evi.owl">here</a>.</span></p>
+                    <a href="https://github.com/fairscape/EVI/blob/master/evi.owl">here</a>.</span></p>
         </div>
 
         <!--TABLE OF CONTENTS-->
@@ -255,6 +255,15 @@
                 </li>
                 <li>
                    <a href="#Method" title="https://w3id.org/EVI#Method">Method</a>
+                </li>
+                <li>
+                   <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                </li>
+                <li>
+                   <a href="#Package" title="https://w3id.org/EVI#Package">Package</a>
+                </li>
+                <li>
+                   <a href="#ROCrate" title="https://w3id.org/EVI#ROCrate">ROCrate</a>
                 </li>
                 <li>
                    <a href="#https://www.w3.org/ns/prov#Activity" title="https://www.w3.org/ns/prov#Activity">prov:Activity</a>
@@ -390,6 +399,9 @@
                    <a href="#indirectlyChallenges" title="https://w3id.org/EVI#indirectlyChallenges">indirectlyChallenges</a>
                 </li>
                 <li>
+                   <a href="#mlModelUsedBy" title="https://w3id.org/EVI#mlModelUsedBy">mlModelUsedBy</a>
+                </li>
+                <li>
                   <a href="#https://w3id.org/EVI#packagedBy" title="https://w3id.org/EVI#packagedBy">packagedBy</a>
                 </li>
                 <li>
@@ -424,6 +436,9 @@
                 </li>
                 <li>
                    <a href="#usedDataset" title="https://w3id.org/EVI#usedDataset">usedDataset</a>
+                </li>
+                <li>
+                   <a href="#usedMLModel" title="https://w3id.org/EVI#usedMLModel">usedMLModel</a>
                 </li>
                 <li>
                    <a href="#usedService" title="https://w3id.org/EVI#usedService">usedService</a>
@@ -510,7 +525,7 @@
                     are activities performed on instances of other DigitalObjects, Software or Services.
                 </p>
                 <div id="EVI_ontology" class="figure" style="text-align: center;">
-                    <img src="resources/images/v11/EVI-v-1-1.svg" alt="Semantic Model of Evidence Graph ontology."
+                    <img src="resources/images/v12/EVI-v-1-2.svg" alt="Semantic Model of Evidence Graph ontology."
                         width="740" height="520" />
                     <br /><br />
                     <div style="text-align: center;">
@@ -563,6 +578,15 @@
                     <li>
                        <a href="#Method" title="https://w3id.org/EVI#Method">Method</a>
                     </li>
+                    <li>
+                   <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                </li>
+                <li>
+                   <a href="#Package" title="https://w3id.org/EVI#Package">Package</a>
+                </li>
+                <li>
+                   <a href="#ROCrate" title="https://w3id.org/EVI#ROCrate">ROCrate</a>
+                </li>
                     <li>
                        <a href="#https://www.w3.org/ns/prov#Activity" title="https://www.w3.org/ns/prov#Activity">prov:Activity</a>
                     </li>
@@ -1099,6 +1123,155 @@
                        <dd>
                           <a href="#describes" title="https://w3id.org/EVI#describes">describes</a>
                           <sup class="type-op" title="object property">op</sup>
+                       </dd>
+                    </dl>
+                 </div>
+
+
+                 <div class="entity" id="MLModel">
+                    <h3>MLModel<sup class="type-c" title="class">c</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#MLModel</p>
+                    <div class="comment">
+                       <span class="markdown">A descriptive recipe describing how a DigitalObject is made or obtained. It describes an Activity, and may refer to some DigitalObject as a component of the recipe.</span>
+                    </div>
+                    <br/>
+                        <div class="example">
+                            <strong class="crossreference">Example</strong>
+                            <pre>
+                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                
+                                @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
+                                @prefix schema:  &lt;http://schema.org/&gt; .
+                                @prefix :        &lt;http://example.com/&gt; .
+                            
+                                # &quot;We used scipy.stats.pearsonr to compute the Pearson correlation coefficient&quot; is a Method.
+                               
+                                :method1 a evi:Method ;
+                                         evi:describes :activity4 ;
+                                         schema:description "scipy.stats.pearsonr"^^xsd:string .
+                                :activity4 a prov:Activity ;
+                                           schema:description "computes the Pearson correlation coefficient"^^xsd:string .
+                            </pre>
+                        </div>
+                        Note that the actual version of code for scipy.stats.pearsonr is a Material (Software) not a Method. Methods are descriptive, Materials are concrete objects (even if they are digital, they are concrete).
+                    <dl class="description">
+                       <dt>has super-classes</dt>
+                       <dd>
+                          <a href="#DigitalObject" title="https://w3id.org/EVI#DigitalObject">DigitalObject</a>
+                          <sup class="type-c" title="class">c</sup>
+                       </dd>
+                       <dt>is in range of</dt>
+                       <dd>
+                          <a href="#usedDataset" title="https://w3id.org/EVI#usedDataset">usedDataset</a>
+                          <sup class="type-op" title="object property">op</sup>
+                       </dd>
+                    </dl>
+                 </div>
+
+
+                 <div class="entity" id="Package">
+                    <h3>Package<sup class="type-c" title="class">c</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#Package</p>
+                    <div class="comment">
+                       <span class="markdown">A body of structured information describing some topic(s) of interest.</span>
+                    </div>
+                    <br/>
+                        <div class="example">
+                            <strong class="crossreference">Example</strong>
+                            <pre>
+                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                                                
+                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
+                                @prefix schema:  &lt;http://schema.org/&gt; .
+                                @prefix :        &lt;http://example.com/&gt; .
+                            
+                                # Dr. Smith analyzed a Dataset consisting of the subject identifiers, post-menstrual ages, and birthrights
+                                # of one thousand babies.
+
+                                :analysis1 a prov:Activity ;
+                                           evi:used :dataset7 ;
+                                           evi:associatedWith :Mary_Smith .
+                                
+                                :dataset7 a evi:Dataset ;
+                                          a evi:Identifier ;
+                                          schema:description "Subject identifiers, post-menstrual ages, and birth weights of one thousand babies"^^xsd:string .
+
+                               
+                                # Dr. Smith&#39;s results included a computed dataset showing the correlation of age and birthweight for male and
+                                # female preterm infants in five age ranges.
+                               
+                                :analysis1 evi:generated :dataset8 .
+                                                                
+                                :dataset8 a evi:Dataset ;
+                                          schema:description "Correlation of age and birthweight for male and female preterm infants in five age ranges"^^xsd:string .
+                            </pre>
+                        </div>
+                    <dl class="description">
+                       <dt>has super-classes</dt>
+                       <dd>
+                          <a href="#DigitalObject" title="https://w3id.org/EVI#DigitalObject">DigitalObject</a>
+                          <sup class="type-c" title="class">c</sup>
+                       </dd>
+                       <dt>has sub-classes</dt>
+                       <dd>
+                          <a href="#ROCrate" title="https://w3id.org/EVI#ROCrate">ROCrate</a>                        
+                          <sup class="type-c" title="class">c</sup>
+                       </dd>
+                    </dl>
+                 </div>
+
+
+                 <div class="entity" id="ROCrate">
+                    <h3>ROCrate<sup class="type-c" title="class">c</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#ROCrate</p>
+                    <div class="comment">
+                       <span class="markdown">An Image is a visual representation of structured or unstructured data produced digitally.</span>
+                    </div>
+                    <br/>
+                        <div class="example">
+                            <strong class="crossreference">Example</strong>
+                            <pre>
+                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                
+                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
+                                @prefix schema:  &lt;http://schema.org/&gt; .
+                                @prefix :        &lt;http://example.com/&gt; .
+                            
+                                #A scatterplot Image was produced from the Dataset of babies, birth weights, and ages.
+                               
+                                :scatterplot1 a evi:Image ;
+                                              evi:generatedBy :activity3 .
+                                
+                                :activity3 prov:used :dataset9 ;
+                                           schema:description "babies, birth weight, and ages"^^xsd:string .
+                                
+                                :activity3 a prov:Activity .
+
+                                # Or
+                                :scatterplot1 evi:derivedFrom :dataset9 .
+                            </pre>
+                        </div>
+                    <dl class="description">
+                       <dt>has super-classes</dt>
+                       <dd>
+                          <a href="#Package" title="https://w3id.org/EVI#Package">Package</a>
+                          <sup class="type-c" title="class">c</sup>
                        </dd>
                     </dl>
                  </div>
@@ -1855,6 +2028,9 @@
                        <a href="#indirectlyChallenges" title="https://w3id.org/EVI#indirectlyChallenges">indirectlyChallenges</a>
                     </li>
                     <li>
+                       <a href="#mlModelUsedBy" title="https://w3id.org/EVI#mlModelUsedBy">mlModelUsedBy</a>
+                    </li>
+                    <li>
                        <a href="#https://w3id.org/EVI#packagedBy" title="https://w3id.org/EVI#packagedBy">packagedBy</a>
                     </li>
                     <li>
@@ -1890,6 +2066,9 @@
                     <li>
                        <a href="#usedDataset" title="https://w3id.org/EVI#usedDataset">usedDataset</a>
                     </li>
+                    <li>
+                   <a href="#usedMLModel" title="https://w3id.org/EVI#usedMLModel">usedMLModel</a>
+                     </li>
                     <li>
                        <a href="#usedService" title="https://w3id.org/EVI#usedService">usedService</a>
                     </li>
@@ -2792,6 +2971,31 @@
                        </dl>
                     </div>
                  </div>
+                 <div class="entity" id="mlModelUsedBy">
+                    <h3>mlModelUsedBy<sup class="type-op" title="object property">op</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#mlModelUsedBy</p>
+                    <div class="comment">
+                       <span class="markdown">Reverse of usedMLModel property.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has super-properties</dt>
+                          <dd>
+                             <a href="#usedBy" title="https://w3id.org/EVI#usedBy">usedBy</a>
+                             <sup class="type-op" title="object property">op</sup>
+                          </dd>
+                          <dt>is inverse of</dt>
+                          <dd>
+                             <a href="#usedMLModel" title="https://w3id.org/EVI#usedMLModel">usedMLModel</a>
+                             <sup class="type-op" title="object property">op</sup>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
                  <div class="entity" id="https://w3id.org/EVI#packagedBy">
                   <h3>packagedBy<sup class="type-op" title="object property">op</sup>
                      <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -3259,6 +3463,65 @@
                           <dt>is inverse of</dt>
                           <dd>
                              <a href="#datasetUsedBy" title="https://w3id.org/EVI#datasetUsedBy">datasetUsedBy</a>
+                             <sup class="type-op" title="object property">op</sup>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="usedMLModel">
+                    <h3>usedMLModel<sup class="type-op" title="object property">op</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#usedMLModel</p>
+                    <div class="comment">
+                       <span class="markdown">The property usedMLModel is a subproperty of used where domain is Computation and range is MLModel.</span>
+                    </div>
+                    <br/>
+                        <div class="example">
+                            <strong class="crossreference">Example</strong>
+                            <pre>
+                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                
+                                @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
+                                @prefix schema:  &lt;http://schema.org/&gt; .
+                                @prefix :        &lt;http://example.com/&gt; .
+                                
+                                # Mary Smith's Computation1 to determine correlations usedDataset Dataset1, a record of preterm infant ages and birth weights.
+                                
+                                :computation1 a evi:Computation ;
+                                              evi:usedDataset :dataset1 ;
+                                              evi:associatedWith :Mary_Smith .
+                                              
+                                :Mary_Smith a prov:Person .
+                                
+                                :dataset1 a evi:Dataset ;
+                                          schema:description "preterm infant ages and birth weights"^^xsd:string .
+                            </pre>
+                        </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has super-properties</dt>
+                          <dd>
+                             <a href="#used" title="https://w3id.org/EVI#used">used</a>
+                             <sup class="type-op" title="object property">op</sup>
+                          </dd>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#Computation" title="https://w3id.org/EVI#Computation">Computation</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>is inverse of</dt>
+                          <dd>
+                             <a href="#mlModelUsedBy" title="https://w3id.org/EVI#mlModelUsedBy">mlModelUsedBy</a>
                              <sup class="type-op" title="object property">op</sup>
                           </dd>
                        </dl>
