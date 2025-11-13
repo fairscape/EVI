@@ -454,6 +454,27 @@
                    <a href="#associatedPublication" title="https://w3id.org/EVI#associatedPublication">associatedPublication</a>
                 </li>
                 <li>
+                   <a href="#framework" title="https://w3id.org/EVI#framework">framework</a>
+                </li>
+                <li>
+                   <a href="#hasBias" title="https://w3id.org/EVI#hasBias">hasBias</a>
+                </li>
+                <li>
+                   <a href="#inputSize" title="https://w3id.org/EVI#inputSize">inputSize</a>
+                </li>
+                <li>
+                   <a href="#intendedUseCase" title="https://w3id.org/EVI#intendedUseCase">intendedUseCase</a>
+                </li>
+                <li>
+                   <a href="#modelFormat" title="https://w3id.org/EVI#modelFormat">modelFormat</a>
+                </li>
+                <li>
+                   <a href="#modelType" title="https://w3id.org/EVI#modelType">modelType</a>
+                </li>
+                <li>
+                   <a href="#parametersCount" title="https://w3id.org/EVI#parametersCount">parametersCount</a>
+                </li>
+                <li>
                    <a href="#publicationVenue" title="https://w3id.org/EVI#publicationVenue">publicationVenue</a>
                 </li>
                 <li>
@@ -1138,28 +1159,6 @@
                     <div class="comment">
                        <span class="markdown">A descriptive recipe describing how a DigitalObject is made or obtained. It describes an Activity, and may refer to some DigitalObject as a component of the recipe.</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                
-                                @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                @prefix schema:  &lt;http://schema.org/&gt; .
-                                @prefix :        &lt;http://example.com/&gt; .
-                            
-                                # &quot;We used scipy.stats.pearsonr to compute the Pearson correlation coefficient&quot; is a Method.
-                               
-                                :method1 a evi:Method ;
-                                         evi:describes :activity4 ;
-                                         schema:description "scipy.stats.pearsonr"^^xsd:string .
-                                :activity4 a prov:Activity ;
-                                           schema:description "computes the Pearson correlation coefficient"^^xsd:string .
-                            </pre>
-                        </div>
-                        Note that the actual version of code for scipy.stats.pearsonr is a Material (Software) not a Method. Methods are descriptive, Materials are concrete objects (even if they are digital, they are concrete).
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -1185,38 +1184,6 @@
                     <div class="comment">
                        <span class="markdown">A body of structured information describing some topic(s) of interest.</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                                                
-                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                @prefix schema:  &lt;http://schema.org/&gt; .
-                                @prefix :        &lt;http://example.com/&gt; .
-                            
-                                # Dr. Smith analyzed a Dataset consisting of the subject identifiers, post-menstrual ages, and birthrights
-                                # of one thousand babies.
-
-                                :analysis1 a prov:Activity ;
-                                           evi:used :dataset7 ;
-                                           evi:associatedWith :Mary_Smith .
-                                
-                                :dataset7 a evi:Dataset ;
-                                          a evi:Identifier ;
-                                          schema:description "Subject identifiers, post-menstrual ages, and birth weights of one thousand babies"^^xsd:string .
-
-                               
-                                # Dr. Smith&#39;s results included a computed dataset showing the correlation of age and birthweight for male and
-                                # female preterm infants in five age ranges.
-                               
-                                :analysis1 evi:generated :dataset8 .
-                                                                
-                                :dataset8 a evi:Dataset ;
-                                          schema:description "Correlation of age and birthweight for male and female preterm infants in five age ranges"^^xsd:string .
-                            </pre>
-                        </div>
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -1242,31 +1209,7 @@
                     <div class="comment">
                        <span class="markdown">An Image is a visual representation of structured or unstructured data produced digitally.</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                
-                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                @prefix schema:  &lt;http://schema.org/&gt; .
-                                @prefix :        &lt;http://example.com/&gt; .
-                            
-                                #A scatterplot Image was produced from the Dataset of babies, birth weights, and ages.
-                               
-                                :scatterplot1 a evi:Image ;
-                                              evi:generatedBy :activity3 .
-                                
-                                :activity3 prov:used :dataset9 ;
-                                           schema:description "babies, birth weight, and ages"^^xsd:string .
-                                
-                                :activity3 a prov:Activity .
-
-                                # Or
-                                :scatterplot1 evi:derivedFrom :dataset9 .
-                            </pre>
-                        </div>
+                    
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -3478,30 +3421,7 @@
                     <div class="comment">
                        <span class="markdown">The property usedMLModel is a subproperty of used where domain is Computation and range is MLModel.</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .                                
-                                @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
-                                @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                @prefix schema:  &lt;http://schema.org/&gt; .
-                                @prefix :        &lt;http://example.com/&gt; .
-                                
-                                # Mary Smith's Computation1 to determine correlations usedDataset Dataset1, a record of preterm infant ages and birth weights.
-                                
-                                :computation1 a evi:Computation ;
-                                              evi:usedDataset :dataset1 ;
-                                              evi:associatedWith :Mary_Smith .
-                                              
-                                :Mary_Smith a prov:Person .
-                                
-                                :dataset1 a evi:Dataset ;
-                                          schema:description "preterm infant ages and birth weights"^^xsd:string .
-                            </pre>
-                        </div>
+                    <br/>                        
                     <div class="description">
                        <dl>
                           <dt>has super-properties</dt>
@@ -3655,6 +3575,27 @@
                        <a href="#associatedPublication" title="https://w3id.org/EVI#associatedPublication">associatedPublication</a>
                     </li>
                     <li>
+                   <a href="#framework" title="https://w3id.org/EVI#framework">framework</a>
+                </li>
+                <li>
+                   <a href="#hasBias" title="https://w3id.org/EVI#hasBias">hasBias</a>
+                </li>
+                <li>
+                   <a href="#inputSize" title="https://w3id.org/EVI#inputSize">inputSize</a>
+                </li>
+                <li>
+                   <a href="#intendedUseCase" title="https://w3id.org/EVI#intendedUseCase">intendedUseCase</a>
+                </li>
+                <li>
+                   <a href="#modelFormat" title="https://w3id.org/EVI#modelFormat">modelFormat</a>
+                </li>
+                <li>
+                   <a href="#modelType" title="https://w3id.org/EVI#modelType">modelType</a>
+                </li>
+                <li>
+                   <a href="#parametersCount" title="https://w3id.org/EVI#parametersCount">parametersCount</a>
+                </li>
+                    <li>
                        <a href="#publicationVenue" title="https://w3id.org/EVI#publicationVenue">publicationVenue</a>
                     </li>
                     <li>
@@ -3771,6 +3712,174 @@
                           <dd>
                              <span class="dotted" title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</span> 
                              <span class="logic">or</span> 
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="framework">
+                    <h3>framework<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#framework</p>
+                    <div class="comment">
+                        <span class="markdown">The machine learning framework used to create the model (e.g., TensorFlow, PyTorch).</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="hasBias">
+                    <h3>hasBias<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#hasBias</p>
+                    <div class="comment">
+                        <span class="markdown">Any issue of a model that may consistently deviate its outcome to be incorrect or unfair.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="inputSize">
+                    <h3>inputSize<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#inputSize
+                    <div class="comment">
+                        <span class="markdown">The expected input size or shape the model is designed to receive and process at one time. For example, image classificatoin models such as ResNet, VGG commonly use 224x224 pixels with 3 channels while Language Models such as BERT, GPT use tokens or context length from thousand to millions.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="intendedUseCase">
+                    <h3>intendedUseCase<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#intendedUseCase</p>
+                    <div class="comment">
+                        <span class="markdown">The context in which this model is intended to be used.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="modelFormat">
+                    <h3>modelFormat<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#modelFormat</p>
+                    <div class="comment">
+                        <span class="markdown">The file format of the model (e.g., ONNX, HDF5, Pickle).</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="modelType">
+                    <h3>modelType<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#modelType</p>
+                    <div class="comment">
+                        <span class="markdown">The type or category of the machine learning model (e.g., Classification, Regression, Generative).</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
+                 <div class="entity" id="parametersCount">
+                    <h3>parametersCount<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#parametersCount</p>
+                    <div class="comment">
+                        <span class="markdown">The number of variables a model learns during training. For current LLM models, this number ranges from millions to trillions that determines the performance and complexity of these models.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#MLModel" title="https://w3id.org/EVI#MLModel">MLModel</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
                              <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
                           </dd>
                        </dl>

@@ -1,875 +1,599 @@
-<https://w3id.org/EVI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/EVI/1.1> .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/contributor> <https://github.com/jniestroy> .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/contributor> <https://github.com/mlev71> .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/created> "2020-07-27"@en .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4060-7360> .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4647-3877> .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/description> "The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2)."@en .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by-nc-sa/2.0/> .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/modified> "2023-05-12"@en .
-<https://w3id.org/EVI> <http://purl.org/dc/terms/title> "EVI: Evidence Graph Ontology"@en .
-<https://w3id.org/EVI> <http://purl.org/vocab/vann/preferredNamespacePrefix> "evi" .
-<https://w3id.org/EVI> <http://purl.org/vocab/vann/preferredNamespaceUri> <http://w3id.org/EVI> .
-<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#priorVersion> "1.0"@en .
-<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#versionIRI> "http://www.w3.org/2002/07/owl"@en .
-<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#versionInfo> "1.1"@en .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Agent> .
-# 
-# http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/modified
-<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
-<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2002/07/owl#versionIRI
-<http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-# 
-# https://w3id.org/EVI#associateFor
-<https://w3id.org/EVI#associateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#associateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
-<https://w3id.org/EVI#associateFor> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#associatedWith> .
-<https://w3id.org/EVI#associateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of associatedWith property." .
-<https://w3id.org/EVI#associateFor> <http://www.w3.org/2000/01/rdf-schema#label> "associateFor" .
-# 
-# https://w3id.org/EVI#associatedWith
-<https://w3id.org/EVI#associatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
-<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Activity> .
-<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Agent> .
-<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "A prov:Agent that has some responsibility for the occurrence of this prov:Activity is associatedWith the prov:Activity." .
-<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#label> "associatedWith" .
-# 
-# https://w3id.org/EVI#challengedBy
-<https://w3id.org/EVI#challengedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#challengedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#challenges> .
-<https://w3id.org/EVI#challengedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of challenges property." .
-<https://w3id.org/EVI#challengedBy> <http://www.w3.org/2000/01/rdf-schema#label> "challengedBy" .
-# 
-# https://w3id.org/EVI#challenges
-<https://w3id.org/EVI#challenges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#comment> "The challenges property is entailed by property chain rule when a DigitalObject A either directly challenges another DigitalObject B, or indirectlyChallenges B by challenging a DigitalObject which supports it." .
-<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#label> "challenges" .
-# 
-# https://w3id.org/EVI#containedBy
-<https://w3id.org/EVI#containedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#containedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#contains> .
-<https://w3id.org/EVI#containedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of contains property." .
-<https://w3id.org/EVI#containedBy> <http://www.w3.org/2000/01/rdf-schema#label> "containedBy" .
-# 
-# https://w3id.org/EVI#contains
-<https://w3id.org/EVI#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of DigitalObjects may contain instances of other DigitalObjects." .
-<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#label> "contains" .
-# 
-# https://w3id.org/EVI#contentUrl
-<https://w3id.org/EVI#contentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Distribution> .
-<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalContent> .
-<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#comment> "The contentUrl property provides the access to the actual byes of the DigitalContent that can be downloaded and examined." .
-<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#label> "contentUrl" .
-# 
-# https://w3id.org/EVI#created
-<https://w3id.org/EVI#created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#created> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
-<https://w3id.org/EVI#created> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#createdBy> .
-<https://w3id.org/EVI#created> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of createdBy property." .
-<https://w3id.org/EVI#created> <http://www.w3.org/2000/01/rdf-schema#label> "created" .
-# 
-# https://w3id.org/EVI#createdBy
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Agent> .
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A prov:Agent is a creator of a prov:Entity if it is createdBy the Agent." .
-<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#label> "createdBy" .
-# 
-# https://w3id.org/EVI#dataSchema
-<https://w3id.org/EVI#dataSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Distribution> .
-<https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Schema> .
+<https://w3id.org/EVI#usedMLModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#comment> "The dataSchema property describes the content-level schema of a DigitalObject that may be distributed in one or more ways." .
-<https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#label> "dataSchema" .
-# 
-# https://w3id.org/EVI#datasetUsedBy
-<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
-<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedDataset> .
-<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedDataset property." .
-<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "datasetUsedBy" .
-# 
-# https://w3id.org/EVI#derivedFrom
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#derivedTo> .
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "A derivation is a transformation of a prov:Entity into another, an update of a prov:Entity resulting in a new one, or the construction of a new prov:Entity based on a pre-existing prov:Entity." .
-<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "derivedFrom" .
-# 
-# https://w3id.org/EVI#derivedTo
-<https://w3id.org/EVI#derivedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#derivedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
-<https://w3id.org/EVI#derivedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of derivedFrom property." .
-<https://w3id.org/EVI#derivedTo> <http://www.w3.org/2000/01/rdf-schema#label> "derivedTo" .
-# 
-# https://w3id.org/EVI#describedBy
-<https://w3id.org/EVI#describedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#describedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#describes> .
-<https://w3id.org/EVI#describedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of describes property." .
-<https://w3id.org/EVI#describedBy> <http://www.w3.org/2000/01/rdf-schema#label> "describedBy" .
-# 
-# https://w3id.org/EVI#describes
-<https://w3id.org/EVI#describes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Method> .
-<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Activity> .
-<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#comment> "The describes property is used when a Method, generally composed with a block of text, narrates a prov:Activity that takes place." .
-<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#label> "describes" .
-# 
-# https://w3id.org/EVI#directlyChallengedBy
-<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challengedBy> .
-<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#directlyChallenges> .
-<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of directlyChallenges property." .
-<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#label> "directlyChallengedBy" .
-# 
-# https://w3id.org/EVI#directlyChallenges
-<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challenges> .
-<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#comment> "The directlyChallenges property establishes a relation between instances of DigitalObjects A and B when A asserts that B is wrong or deficient. It is non-transitive, entailing indirectlyChallenges properties on DigitalObjects supportedBy the DigitalObject it directlyChallenges, via a property chain rule." .
-<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#label> "directlyChallenges" .
-# 
-# https://w3id.org/EVI#directlySupportedBy
-<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#supportedBy> .
-<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#directlySupports> .
-<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The use of directlySupportedBy property is intended to establish a direct relation between instances of DigitalObjects." .
-<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "directlySupportedBy" .
-# 
-# https://w3id.org/EVI#directlySupports
-<https://w3id.org/EVI#directlySupports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#directlySupports> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#supports> .
-<https://w3id.org/EVI#directlySupports> <http://www.w3.org/2000/01/rdf-schema#comment> "The directlySupports property is a non-transitive version of supports, a subproperty of supports. directlySupports is a superproperty of the properties attributed (inverse of attributedTo), derived (inverse of derivedFrom), associated (inverse of associatedWith), used, and generated (inverse of generatedBy)." .
-<https://w3id.org/EVI#directlySupports> <http://www.w3.org/2000/01/rdf-schema#label> "directlySupports" .
-# 
-# https://w3id.org/EVI#distributedFrom
-<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#hasDistribution> .
-<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of hasDistribution property." .
-<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "distributedFrom" .
-# 
-# https://w3id.org/EVI#generated
-<https://w3id.org/EVI#generated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#generated> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
-<https://w3id.org/EVI#generated> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#generatedBy> .
-<https://w3id.org/EVI#generated> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of generatedBy property." .
-<https://w3id.org/EVI#generated> <http://www.w3.org/2000/01/rdf-schema#label> "generated" .
-# 
-# https://w3id.org/EVI#generatedBy
-<https://w3id.org/EVI#generatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
-<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Activity> .
-<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Generation is the completion of production of a new prov:Entity by a prov:Activity. This entity did not exist before generation and becomes available for usage after this generation." .
-<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "generatedBy" .
-# 
-# https://w3id.org/EVI#hasDistribution
-<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Distribution> .
-<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#comment> "Used to represent different forms of a DigitalObject. An image may be distributed as a JPEG, PNG, or SVG." .
-<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#label> "hasDistribution" .
-# 
-# https://w3id.org/EVI#indirectlyChallengedBy
-<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challengedBy> .
-<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#indirectlyChallenges> .
-<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of indirectlyChallenges property." .
-<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#label> "indirectlyChallengedBy" .
-# 
-# https://w3id.org/EVI#indirectlyChallenges
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challenges> .
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid1 .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#supports> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#directlyChallenges> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#comment> "The indirectlyChallenges property establishes a relation between instances of DigitalObjects when one indirectly challenges the other entailed by property chaining." .
-<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#label> "indirectlyChallenges" .
-# 
-# https://w3id.org/EVI#packagedBy
-<https://w3id.org/EVI#packagedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#packagedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#packages> .
-<https://w3id.org/EVI#packagedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of packages property." .
-<https://w3id.org/EVI#packagedBy> <http://www.w3.org/2000/01/rdf-schema#label> "packagedBy" .
-# 
-# https://w3id.org/EVI#packages
-<https://w3id.org/EVI#packages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Container> .
-<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Software> .
-<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of software can be packaged by the instances of containers." .
-<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#label> "packages" .
-# 
-# https://w3id.org/EVI#representedBy
-<https://w3id.org/EVI#representedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#representedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#represents> .
-<https://w3id.org/EVI#representedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of represents property." .
-<https://w3id.org/EVI#representedBy> <http://www.w3.org/2000/01/rdf-schema#label> "representedBy" .
-# 
-# https://w3id.org/EVI#represents
-<https://w3id.org/EVI#represents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#comment> "A DigitalObject represents an Entity or any of its features or feature sets." .
-<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#label> "represents" .
-# 
-# https://w3id.org/EVI#serviceUsedBy
-<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
-<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedService> .
-<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedService property." .
-<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "serviceUsedBy" .
-# 
-# https://w3id.org/EVI#softwareUsedBy
-<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
-<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedSoftware> .
-<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedSoftware property." .
-<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "softwareUsedBy" .
-# 
-# https://w3id.org/EVI#supportedBy
-<https://w3id.org/EVI#supportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#supportedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#supports> .
-<https://w3id.org/EVI#supportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The supportedBy property is a transitive relation between DigitalObjects." .
-<https://w3id.org/EVI#supportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "supportedBy" .
-# 
-# https://w3id.org/EVI#supports
-<https://w3id.org/EVI#supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#comment> "The supports property is a transitive relation between DigitalObjects entailed by its subproperty, directlySupports, which is non-transitive. In EvidenceGraphs, if A supports B, then the correctness (truth value) of A provides a warrant for belief in the correctness (truth value) of B." .
-<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#label> "supports" .
-# 
-# https://w3id.org/EVI#used
-<https://w3id.org/EVI#used> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
-<https://w3id.org/EVI#used> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedBy> .
-<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Activity> .
-<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#comment> "An Activity used an Entity, when the Entity (such as a Dataset or a Software) was instrumental in enabling that Activity to occur." .
-<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#label> "used" .
-# 
-# https://w3id.org/EVI#usedBy
-<https://w3id.org/EVI#usedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#usedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
-<https://w3id.org/EVI#usedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of used property." .
-<https://w3id.org/EVI#usedBy> <http://www.w3.org/2000/01/rdf-schema#label> "usedBy" .
-# 
-# https://w3id.org/EVI#usedDataset
-<https://w3id.org/EVI#usedDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
-<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
-<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Dataset> .
-<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedDataset is a subproperty of used where domain is Computation and range is Dataset." .
-<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#label> "usedDataset" .
-# 
-# https://w3id.org/EVI#usedService
-<https://w3id.org/EVI#usedService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
-<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
-<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Service> .
-<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedService is a subproperty of used where domain is Computation and range is Service." .
-<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#label> "usedService" .
-# 
-# https://w3id.org/EVI#usedSoftware
-<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
-<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
-<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Software> .
-<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedSoftware is a subproperty of used where domain is Computation and range is Software." .
-<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#label> "usedSoftware" .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://schema.org/author
-<http://schema.org/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/author> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/author> <http://www.w3.org/2000/01/rdf-schema#comment> "The author of the content." .
-<http://schema.org/author> <http://www.w3.org/2000/01/rdf-schema#label> "schema:author" .
-# 
-# http://schema.org/contentSize
-<http://schema.org/contentSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#unionOf> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#long> .
-<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#comment> "File size in (tera/giga/mega/kilo) bytes." .
-<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#label> "schema:contentSize" .
-# 
-# http://schema.org/dateCreated
-<http://schema.org/dateCreated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Dataset> .
-<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the item was created." .
-<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#label> "schema:dateCreated" .
-# 
-# http://schema.org/dateModified
-<http://schema.org/dateModified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid6 .
-_:genid6 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#comment> "The date when the item was modifed last." .
-<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#label> "schema:dateModified" .
-# 
-# http://schema.org/datePublished
-<http://schema.org/datePublished> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
-_:genid9 <http://www.w3.org/2002/07/owl#unionOf> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the item was first published." .
-<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#label> "schema:datePublished" .
-# 
-# http://schema.org/description
-<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of the item." .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#label> "schema:description" .
-# 
-# http://schema.org/encodingFormat
-<http://schema.org/encodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid12 .
-_:genid12 <http://www.w3.org/2002/07/owl#unionOf> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Nfa1193854ed94c35a7ce1c5dbf50be12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#label> "createdBy" .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "The format of the item in question encoded into." .
-<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#label> "schema:encodingFormat" .
-# 
-# http://schema.org/endTime
-<http://schema.org/endTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
-<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions." .
-<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#label> "schema:endTime" .
-# 
-# http://schema.org/fileFormat
-<http://schema.org/fileFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid15 .
-_:genid15 <http://www.w3.org/2002/07/owl#unionOf> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "Media type, typically MIME format (see IANA site) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry." .
-<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#label> "schema:fileFormat" .
-# 
-# http://schema.org/identifier
-<http://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
-<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links." .
-<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "schema:identifier" .
-# 
-# http://schema.org/keywords
-<http://schema.org/keywords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid18 .
-_:genid18 <http://www.w3.org/2002/07/owl#unionOf> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Computation> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#comment> "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property." .
-<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#label> "schema:keywords" .
-# 
-# http://schema.org/license
-<http://schema.org/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid22 .
-_:genid22 <http://www.w3.org/2002/07/owl#unionOf> _:genid24 .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#range> _:genid25 .
-_:genid25 <http://www.w3.org/2002/07/owl#unionOf> _:genid27 .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#comment> "A license document that applies to this content, typically indicated by URL." .
-<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#label> "schema:license" .
-# 
-# http://schema.org/name
-<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the item." .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "schema:name" .
-# 
-# http://schema.org/runtime
-<http://schema.org/runtime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/runtime> <http://www.w3.org/2000/01/rdf-schema#comment> "Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0)." .
-<http://schema.org/runtime> <http://www.w3.org/2000/01/rdf-schema#label> "schema:runtime" .
-# 
-# http://schema.org/startTime
-<http://schema.org/startTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
-<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions." .
-<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#label> "schema:startTime" .
-# 
-# http://schema.org/title
-<http://schema.org/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/title> <http://www.w3.org/2000/01/rdf-schema#comment> "The title of a Thing." .
-<http://schema.org/title> <http://www.w3.org/2000/01/rdf-schema#label> "schema:title" .
-# 
-# http://schema.org/version
-<http://schema.org/version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#comment> "The version of the DigitalObject." .
-<http://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#label> "schema:version" .
-# 
-# https://w3id.org/EVI#additionalDocumentation
-<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid28 .
-_:genid28 <http://www.w3.org/2002/07/owl#unionOf> _:genid31 .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Computation> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#range> _:genid32 .
-_:genid32 <http://www.w3.org/2002/07/owl#unionOf> _:genid34 .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#comment> "Any additional information of the item that may be useful." .
-<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#label> "additionalDocumentation" .
-# 
-# https://w3id.org/EVI#associatedPublication
-<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid35 .
-_:genid35 <http://www.w3.org/2002/07/owl#unionOf> _:genid38 .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Computation> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#range> _:genid39 .
-_:genid39 <http://www.w3.org/2002/07/owl#unionOf> _:genid41 .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#comment> "Refenrece to the publications where the item or its relevant information can be discovered." .
-<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#label> "associatedPublication" .
-# 
-# https://w3id.org/EVI#publicationVenue
-<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid42 .
-_:genid42 <http://www.w3.org/2002/07/owl#unionOf> _:genid44 .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#comment> "The (digital/physical) name where the item was published." .
-<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#label> "publicationVenue" .
-# 
-# https://w3id.org/EVI#state
-<https://w3id.org/EVI#state> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Claim> .
-<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#comment> "Textual representation of a claim" .
-<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#label> "state" .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://schema.org/Article
-<http://schema.org/Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Article> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Article> .
-<http://schema.org/Article> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<http://schema.org/Article> <http://www.w3.org/2000/01/rdf-schema#comment> "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all." .
-<http://schema.org/Article> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Article" .
-# 
-# http://schema.org/Claim
-<http://schema.org/Claim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Claim> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Claim> .
-<http://schema.org/Claim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<http://schema.org/Claim> <http://www.w3.org/2000/01/rdf-schema#comment> "A Claim in Schema.org represents a specific, factually-oriented claim that could be the itemReviewed in a ClaimReview. The content of a claim can be summarized with the text property. Variations on well known claims can have their common identity indicated via sameAs links, and summarized with a name. Ideally, a Claim description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.\n\nBeyond ClaimReview, the Claim type can be associated with related creative works - for example a ScholaryArticle or Question might be about some Claim.\n\nAt this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration." .
-<http://schema.org/Claim> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Claim" .
-# 
-# http://schema.org/Dataset
-<http://schema.org/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Dataset> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Dataset> .
-<http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A body of structured information describing some topic(s) of interest." .
+<https://w3id.org/EVI#Package> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Dataset" .
-# 
-# http://schema.org/Organization
-<http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#modelType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+_:Nfb3c47769a3d42419011542893754191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/Service> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Service> .
+<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Distribution> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#Distribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#derivedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Software> .
+<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#label> "schema:encodingFormat" .
+<https://w3id.org/EVI#hasBias> <http://www.w3.org/2000/01/rdf-schema#comment> "Any issue of a model that may consistently deviate its outcome to be incorrect or unfair." .
+<https://w3id.org/EVI#MLModel> <http://www.w3.org/2000/01/rdf-schema#label> "MLModel"@en .
+<https://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of indirectlyChallenges property." .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
+<http://www.w3.org/ns/prov#Bundle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#Method> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#label> "indirectlyChallenges" .
+<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#inputSize> <http://www.w3.org/2000/01/rdf-schema#label> "inputSize" .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Service> .
+<https://w3id.org/EVI#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#parametersCount> <http://www.w3.org/2000/01/rdf-schema#label> "parametersCount" .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/2000/01/rdf-schema#label> "EvidenceGraph" .
+<https://w3id.org/EVI#created> <http://www.w3.org/2000/01/rdf-schema#label> "created" .
+<https://w3id.org/EVI#generated> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#generatedBy> .
+<https://w3id.org/EVI#Claim> <http://www.w3.org/2000/01/rdf-schema#comment> "A Claim is a declarative sentence or assertion. Claims are defeasible." .
+<https://w3id.org/EVI#derivedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/contributor> <https://github.com/jniestroy> .
+<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "distributedFrom" .
+_:Nce33bcf0eca3438ca339c18cbafc8472 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N3d13ed0d04f04c51a095f813997f2c7e .
+<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#label> "additionalDocumentation" .
+<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#usedDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#contentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#directlySupports> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#supports> .
+<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#label> "schema:startTime" .
+<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#label> "schema:SoftwareSourceCode" .
+<https://w3id.org/EVI#Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#comment> "The supports property is a transitive relation between DigitalObjects entailed by its subproperty, directlySupports, which is non-transitive. In EvidenceGraphs, if A supports B, then the correctness (truth value) of A provides a warrant for belief in the correctness (truth value) of B." .
+<https://w3id.org/EVI#usedMLModel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
+<http://schema.org/datePublished> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#range> _:Nfb3c47769a3d42419011542893754191 .
+<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates." .
+<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challenges> .
+<https://w3id.org/EVI#supportedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#supports> .
+<https://w3id.org/EVI#mlModelUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "schema:identifier" .
+<https://w3id.org/EVI#associateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#hasDistribution> .
+<https://w3id.org/EVI#modelFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "The file format of the model (e.g., ONNX, HDF5, Pickle)." .
 <http://schema.org/Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.w3.org/ns/prov#Organization> .
+<https://w3id.org/EVI#Computation> <http://www.w3.org/2000/01/rdf-schema#label> "Computation" .
+_:N2b0e6260a6d14db3b35eca0c82c66508 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
+<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of software can be packaged by the instances of containers." .
+<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#comment> "Instances of DigitalObjects may contain instances of other DigitalObjects." .
+_:N30ab2c1a589242efaa464bbd4a9d22f5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Computation> .
+<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
+_:N37ffb79d9a2d409c92e86008f6519fed <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N7ac8284c91ac4bffa957425012b54369 .
+<https://w3id.org/EVI#Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A Service is an Activity accessed online, which executes a Computation." .
+<https://w3id.org/EVI#Reference> <http://www.w3.org/2000/01/rdf-schema#comment> "A Reference is a bibliographic record. References are Representations which represent and attribute archived digital or bibliographic objects, including Articles, Datasets, and Software." .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/modified> "2025-11-07"@en .
+<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#comment> "A license document that applies to this content, typically indicated by URL." .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:N2a95c47191824e0a8d53674395752438 .
+<https://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A Person is a human Agent." .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "schema:name" .
+_:N889afee0109c4667a285af07340dad3c <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Computation> .
+_:N30ab2c1a589242efaa464bbd4a9d22f5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nb3b2a52811b1478d8a737df63710616d .
+_:Nd1e9f5743eed4ccea29525833a324206 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N666773303e1446038816e54e3e21f79c .
+<https://w3id.org/EVI#challengedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
+<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#label> "contains" .
+_:N1a0acc0547f2406aa0bf383c1955b46f <http://www.w3.org/2002/07/owl#unionOf> _:N3819eb89e8d84d5c8bd27601f1b80a00 .
+<http://schema.org/Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#directlySupports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:N4172f5b5abb849a998fabbdaea104bde <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#comment> "The describes property is used when a Method, generally composed with a block of text, narrates a prov:Activity that takes place." .
+<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://orcid.org/0000-0003-4060-7360> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/SoftwareApplication> <http://www.w3.org/2000/01/rdf-schema#comment> "A software application." .
+<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Distribution> .
+<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#comment> "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property." .
+_:Nddeb8932f5be4be1b2be7c3b08c3cd83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:N5301cd9a878d4955a4aeb3665dd0063a <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Computation> .
+<https://w3id.org/EVI#representedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#supportedBy> .
+<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#Reference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the item was first published." .
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions." .
+<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#label> "used" .
+_:N3819eb89e8d84d5c8bd27601f1b80a00 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N9fe00874ee1140099f4ff5d1a8a06bd2 .
+<http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Organization" .
+<https://w3id.org/EVI#usedMLModel> <http://www.w3.org/2000/01/rdf-schema#label> "usedMLModel" .
+<https://w3id.org/EVI#Container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Claim> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Claim> .
+<https://w3id.org/EVI#distributedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of hasDistribution property." .
+<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#domain> _:Nba3cc71b22eb418c8b03f631e364a8d4 .
+_:N4172f5b5abb849a998fabbdaea104bde <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Entity> .
+<http://schema.org/runtime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Method> .
+_:Nd9329b165269419fa6686c17f8fe8262 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#comment> "The directlyChallenges property establishes a relation between instances of DigitalObjects A and B when A asserts that B is wrong or deficient. It is non-transitive, entailing indirectlyChallenges properties on DigitalObjects supportedBy the DigitalObject it directlyChallenges, via a property chain rule." .
+<https://w3id.org/EVI#describedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#comment> "Date when the item was created." .
+_:Nba3cc71b22eb418c8b03f631e364a8d4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#inputSize> <http://www.w3.org/2000/01/rdf-schema#comment> "The expected input size or shape the model is designed to receive and process at one time. For example, image classificatoin models such as ResNet, VGG commonly use 224x224 pixels with 3 channels while Language Models such as BERT, GPT use tokens or context length from thousand to millions." .
+<https://w3id.org/EVI#associateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
+<https://w3id.org/EVI#Schema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#Dataset> .
+_:N8f59881000c34ea888a66d16e3fcc7a7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
+<https://w3id.org/EVI#hasBias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedDataset> .
+<https://w3id.org/EVI> <http://purl.org/vocab/vann/preferredNamespacePrefix> "evi" .
+<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Activity> .
+_:N8162949e877349c5bd155cb373771e67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nd9329b165269419fa6686c17f8fe8262 .
+<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#range> _:N640fb088466a41e683040b8b91eceb73 .
+<https://w3id.org/EVI#modelFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedSoftware property." .
+<http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A body of structured information describing some topic(s) of interest." .
+<https://w3id.org/EVI#Software> <http://www.w3.org/2000/01/rdf-schema#label> "Software" .
+<https://w3id.org/EVI#intendedUseCase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#comment> "The (digital/physical) name where the item was published." .
+<https://w3id.org/EVI#Schema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Nd9329b165269419fa6686c17f8fe8262 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#intendedUseCase> <http://www.w3.org/2000/01/rdf-schema#comment> "The context in which this model is intended to be used." .
+_:N5c9c66fc760d4252ad7a42ce375a8b4e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#usedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#packagedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of packages property." .
+<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#domain> _:N1a0acc0547f2406aa0bf383c1955b46f .
+<http://schema.org/title> <http://www.w3.org/2000/01/rdf-schema#label> "schema:title" .
+<https://w3id.org/EVI#inputSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#containedBy> <http://www.w3.org/2000/01/rdf-schema#label> "containedBy" .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/contributor> <https://github.com/mlev71> .
+<http://schema.org/Claim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#Claim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by-nc-sa/2.0/> .
+<https://w3id.org/EVI#Package> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#DigitalContent> <http://www.w3.org/2000/01/rdf-schema#label> "DigitalContent" .
+<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/2000/01/rdf-schema#comment> "An EvidenceGraph is a directed acyclic graph\n\nEv = (Rn, r+, r-)\n\nwhere Rn is a set of Representations, r+ ∈ RnXRn is a set of supports relations, r- ∈ RnXRn is a set of challenge relations, and R+∩R- = Φ.\n\nEvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schiex, 2009) represented as RDF named graphs." .
+<http://schema.org/keywords> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:N666773303e1446038816e54e3e21f79c <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Container> .
+<https://w3id.org/EVI#Schema> <http://www.w3.org/2000/01/rdf-schema#comment> "A semi-structured interpretation of instances of DigitalObjects that can help comprehend the content." .
+<https://w3id.org/EVI#challengedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#challenges> .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "derivedFrom" .
+<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#label> "state" .
+<https://w3id.org/EVI#framework> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Activity> .
+<https://w3id.org/EVI#containedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Agent> .
+<http://schema.org/SoftwareApplication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Activity" .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/EVI#modelType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type or category of the machine learning model (e.g., Classification, Regression, Generative)." .
+<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#label> "indirectlyChallengedBy" .
+<https://w3id.org/EVI#usedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
+<http://schema.org/Article> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Article" .
+<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#label> "packages" .
+<https://w3id.org/EVI#MLModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#comment> "The challenges property is entailed by property chain rule when a DigitalObject A either directly challenges another DigitalObject B, or indirectlyChallenges B by challenging a DigitalObject which supports it." .
+<https://w3id.org/EVI#Article> <http://www.w3.org/2000/01/rdf-schema#comment> "An Article is a (typically compound) textual document conveying a set of Claims and other DigitalObjects. Among these, an Article in EVI always conveys an assertion of its authorship in the form of a bibliographic self-reference." .
+<http://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4647-3877> .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#directlySupports> .
+<https://w3id.org/EVI#packagedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#containedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of contains property." .
+<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#Method> <http://www.w3.org/2000/01/rdf-schema#comment> "A descriptive recipe describing how a Representation is made or obtained. It describes an Activity, and may referTo some Material as a component of the recipe." .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/description> "The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2)."@en .
+<https://w3id.org/EVI#packagedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#packages> .
+<https://w3id.org/EVI#supportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Entity> .
+<http://schema.org/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Nfa1193854ed94c35a7ce1c5dbf50be12 <http://www.w3.org/2002/07/owl#unionOf> _:Nc43f5969fcee4317bf697e29229e71d8 .
+<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/Article> <http://www.w3.org/2000/01/rdf-schema#comment> "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all." .
+<https://w3id.org/EVI#generated> <http://www.w3.org/2000/01/rdf-schema#label> "generated" .
+<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#hasBias> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+_:Nb3b2a52811b1478d8a737df63710616d <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4060-7360> .
+<http://schema.org/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#label> "schema:dateModified" .
+<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#label> "hasDistribution" .
+<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
+<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Claim> .
+<http://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#label> "schema:version" .
+<https://w3id.org/EVI#modelFormat> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+<https://w3id.org/EVI#associateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of associatedWith property." .
+<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+_:N5c9c66fc760d4252ad7a42ce375a8b4e <http://www.w3.org/2002/07/owl#unionOf> _:N5301cd9a878d4955a4aeb3665dd0063a .
+<https://w3id.org/EVI#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:N3819eb89e8d84d5c8bd27601f1b80a00 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#Computation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#label> "associatedWith" .
+<https://w3id.org/EVI#inputSize> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+_:N2a95c47191824e0a8d53674395752438 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N2b0e6260a6d14db3b35eca0c82c66508 .
+<https://www.w3.org/ns/prov#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Nb3b2a52811b1478d8a737df63710616d <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nddeb8932f5be4be1b2be7c3b08c3cd83 .
+<https://w3id.org/EVI#ROCrate> <http://www.w3.org/2000/01/rdf-schema#label> "ROCrate" .
+<https://w3id.org/EVI#modelFormat> <http://www.w3.org/2000/01/rdf-schema#label> "modelFormat" .
+<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
+<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:N69e9bc263b7a492da24c709fe879c29c <http://www.w3.org/2002/07/owl#unionOf> _:Nc438f93256cc4b82ba6c3f9b7ef21214 .
+<https://w3id.org/EVI#parametersCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Na2a23265f6ca456b8af943cdb0ed1672 <http://www.w3.org/2002/07/owl#unionOf> _:N37ffb79d9a2d409c92e86008f6519fed .
+<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An Organization is a social or legal institution with structure and purpose such as a company, society, university, sports team, etc." .
+<http://schema.org/Article> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://schema.org/startTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#mlModelUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedMLModel> .
+<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#Software> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#usedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of used property." .
+_:Neb884f4e80674c5bb4037a54ab34d6bd <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedDataset is a subproperty of used where domain is Computation and range is Dataset." .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#priorVersion> "1.1"@en .
+<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Distribution> .
+<https://w3id.org/EVI#supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/EVI#modelType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#label> "directlyChallengedBy" .
+_:Neb884f4e80674c5bb4037a54ab34d6bd <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "serviceUsedBy" .
+<https://w3id.org/EVI#Article> <http://www.w3.org/2000/01/rdf-schema#label> "Article" .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challenges> .
+<https://w3id.org/EVI> <http://purl.org/vocab/vann/preferredNamespaceUri> <http://w3id.org/EVI> .
+<https://w3id.org/EVI#usedMLModel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
+<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#intendedUseCase> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+<https://w3id.org/EVI#Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#ROCrate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#Package> .
+<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Organization" .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "terms:creator" .
+<https://w3id.org/EVI#associateFor> <http://www.w3.org/2000/01/rdf-schema#label> "associateFor" .
+<https://orcid.org/0000-0003-4647-3877> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#used> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:N656d1f893b73479faf005b0166bb7695 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Nc438f93256cc4b82ba6c3f9b7ef21214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#comment> "A DigitalObject represents an Entity or any of its features or feature sets." .
+<http://schema.org/Person> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.w3.org/ns/prov#Person> .
+<https://w3id.org/EVI#usedBy> <http://www.w3.org/2000/01/rdf-schema#label> "usedBy" .
+<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#label> "directlyChallenges" .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#comment> "The indirectlyChallenges property establishes a relation between instances of DigitalObjects when one indirectly challenges the other entailed by property chaining." .
+<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalContent> .
+<https://w3id.org/EVI#containedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#contains> .
+<https://w3id.org/EVI#supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:N17971ccadfe0494485b7dae2ed371e61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nbaeeda7fc8d44f68bd57717aefd165a1 .
+<https://w3id.org/EVI#usedMLModel> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedModel is a subproperty of used where domain is Computation and range is MLModel. This is common in fine-tuning or inference tasks." .
+_:N8162949e877349c5bd155cb373771e67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#modelFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
+<http://schema.org/Claim> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Claim" .
+<https://w3id.org/EVI#mlModelUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "mlModelUsedBy" .
+_:N7ac8284c91ac4bffa957425012b54369 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A person (alive, dead, undead, or fictional)." .
+<https://w3id.org/EVI#generated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "A derivation is a transformation of a prov:Entity into another, an update of a prov:Entity resulting in a new one, or the construction of a new prov:Entity based on a pre-existing prov:Entity." .
+<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#label> "associatedPublication" .
+<http://schema.org/SoftwareSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Schema> .
+_:N640fb088466a41e683040b8b91eceb73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+<https://w3id.org/EVI#created> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#createdBy> .
+<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Activity> .
+_:N2419b5b626154ae6b71f75b474dc6817 <http://www.w3.org/2002/07/owl#unionOf> _:Nce33bcf0eca3438ca339c18cbafc8472 .
+<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#label> "publicationVenue" .
+<https://w3id.org/EVI#contains> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#packages> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Software> .
 <http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
 <http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization such as a school, NGO, corporation, club, etc." .
-<http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Organization" .
-# 
-# http://schema.org/Person
-<http://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Person> <http://www.w3.org/2002/07/owl#equivalentClass> <https://www.w3.org/ns/prov#Person> .
-<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
-<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A person (alive, dead, undead, or fictional)." .
-<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Person" .
-# 
-# http://schema.org/Service
-<http://schema.org/Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Service> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Service> .
-<http://schema.org/Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#SoftwareAgent> .
-<http://schema.org/Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A service provided by an organization, e.g. delivery service, print services, etc" .
-<http://schema.org/Service> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Service" .
-# 
-# http://schema.org/SoftwareApplication
-<http://schema.org/SoftwareApplication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/SoftwareApplication> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Software> .
-<http://schema.org/SoftwareApplication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<http://schema.org/SoftwareApplication> <http://www.w3.org/2000/01/rdf-schema#comment> "A software application." .
-<http://schema.org/SoftwareApplication> <http://www.w3.org/2000/01/rdf-schema#label> "schema:SoftwareApplication" .
-# 
-# http://schema.org/SoftwareSourceCode
-<http://schema.org/SoftwareSourceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Software> .
-<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates." .
-<http://schema.org/SoftwareSourceCode> <http://www.w3.org/2000/01/rdf-schema#label> "schema:SoftwareSourceCode" .
-# 
-# http://www.w3.org/ns/prov#Bundle
-<http://www.w3.org/ns/prov#Bundle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.w3.org/ns/prov#Bundle> <http://www.w3.org/2000/01/rdf-schema#comment> "A bundle is a named set of provenance descriptions, and is itself an Entity, so allowing provenance of provenance to be expressed." .
-<http://www.w3.org/ns/prov#Bundle> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Bundle" .
-# 
-# http://www.w3.org/ns/prov#SoftwareAgent
-<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
-<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "A Service is considered a SoftwareAgent that can be invoked and executed. A Software is different from SoftwareAgent in the context that it can be downloaded." .
-<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#label> "prov:SoftwareAgent" .
-# 
-# https://w3id.org/EVI#Article
-<https://w3id.org/EVI#Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Article> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Article> <http://www.w3.org/2000/01/rdf-schema#comment> "An Article is a (typically compound) textual document conveying a set of Claims and other DigitalObjects. Among these, an Article in EVI always conveys an assertion of its authorship in the form of a bibliographic self-reference." .
-<https://w3id.org/EVI#Article> <http://www.w3.org/2000/01/rdf-schema#label> "Article" .
-# 
-# https://w3id.org/EVI#Claim
-<https://w3id.org/EVI#Claim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Claim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Claim> <http://www.w3.org/2000/01/rdf-schema#comment> "A Claim is a declarative sentence or assertion. Claims are defeasible." .
-<https://w3id.org/EVI#Claim> <http://www.w3.org/2000/01/rdf-schema#label> "Claim" .
-# 
-# https://w3id.org/EVI#Computation
-<https://w3id.org/EVI#Computation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Computation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Activity> .
-<https://w3id.org/EVI#Computation> <http://www.w3.org/2000/01/rdf-schema#comment> "Computation is an Activity performed on a Dataset with the help of a Software." .
-<https://w3id.org/EVI#Computation> <http://www.w3.org/2000/01/rdf-schema#label> "Computation" .
-# 
-# https://w3id.org/EVI#Container
-<https://w3id.org/EVI#Container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Container> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Container> <http://www.w3.org/2000/01/rdf-schema#comment> "A container is a digital object that can be defined as packages of software. Instances of containers are accompanied by all necessary dependencies such as specific versions, runtime environment and required libraries for execution." .
-<https://w3id.org/EVI#Container> <http://www.w3.org/2000/01/rdf-schema#label> "Container" .
-# 
-# https://w3id.org/EVI#Dataset
-<https://w3id.org/EVI#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A body of structured information describing some topic(s) of interest." .
-<https://w3id.org/EVI#Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset" .
-# 
-# https://w3id.org/EVI#DigitalContent
-<https://w3id.org/EVI#DigitalContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#DigitalContent> <http://www.w3.org/2000/01/rdf-schema#label> "DigitalContent" .
-# 
-# https://w3id.org/EVI#DigitalObject
-<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/2000/01/rdf-schema#comment> "A DigitalObject is an Entity which represents another Entity. DigitalObjects are always attributedTo an Agent, their creator, contributor, influencer or to an Activity they were generatedBy." .
-<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/2000/01/rdf-schema#label> "DigitalObject" .
-# 
-# https://w3id.org/EVI#Distribution
-<https://w3id.org/EVI#Distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Distribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Distribution> <http://www.w3.org/2000/01/rdf-schema#comment> "The placement of instances of DigitalObjects. A single DigitalObject may be represented in multiple forms, hence resulting in multiple distributions. An Image can be encoded and distributed as any of the JPEG, PNG, SVG." .
-<https://w3id.org/EVI#Distribution> <http://www.w3.org/2000/01/rdf-schema#label> "Distribution" .
-# 
-# https://w3id.org/EVI#EvidenceGraph
-<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/2000/01/rdf-schema#comment> "An EvidenceGraph is a directed acyclic graph\n\nEv = (Rn, r+, r-)\n\nwhere Rn is a set of Representations, r+ ∈ RnXRn is a set of supports relations, r- ∈ RnXRn is a set of challenge relations, and R+∩R- = Φ.\n\nEvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schiex, 2009) represented as RDF named graphs." .
-<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/2000/01/rdf-schema#label> "EvidenceGraph" .
-# 
-# https://w3id.org/EVI#Image
-<https://w3id.org/EVI#Image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#Dataset> .
-<https://w3id.org/EVI#Image> <http://www.w3.org/2000/01/rdf-schema#comment> "An Image is a visual representation of structured or unstructured data produced digitally." .
-<https://w3id.org/EVI#Image> <http://www.w3.org/2000/01/rdf-schema#label> "Image" .
-# 
-# https://w3id.org/EVI#Method
-<https://w3id.org/EVI#Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Method> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Method> <http://www.w3.org/2000/01/rdf-schema#comment> "A descriptive recipe describing how a Representation is made or obtained. It describes an Activity, and may referTo some Material as a component of the recipe." .
-<https://w3id.org/EVI#Method> <http://www.w3.org/2000/01/rdf-schema#label> "Method" .
-# 
-# https://w3id.org/EVI#Reference
-<https://w3id.org/EVI#Reference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Reference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Reference> <http://www.w3.org/2000/01/rdf-schema#comment> "A Reference is a bibliographic record. References are Representations which represent and attribute archived digital or bibliographic objects, including Articles, Datasets, and Software." .
-<https://w3id.org/EVI#Reference> <http://www.w3.org/2000/01/rdf-schema#label> "Reference" .
-# 
-# https://w3id.org/EVI#Schema
-<https://w3id.org/EVI#Schema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Schema> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#Dataset> .
-<https://w3id.org/EVI#Schema> <http://www.w3.org/2000/01/rdf-schema#comment> "A semi-structured interpretation of instances of DigitalObjects that can help comprehend the content." .
-<https://w3id.org/EVI#Schema> <http://www.w3.org/2000/01/rdf-schema#label> "Schema" .
-# 
-# https://w3id.org/EVI#Service
-<https://w3id.org/EVI#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#SoftwareAgent> .
-<https://w3id.org/EVI#Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A Service is an Activity accessed online, which executes a Computation." .
-<https://w3id.org/EVI#Service> <http://www.w3.org/2000/01/rdf-schema#label> "Service" .
-# 
-# https://w3id.org/EVI#Software
-<https://w3id.org/EVI#Software> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/EVI#Software> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
-<https://w3id.org/EVI#Software> <http://www.w3.org/2000/01/rdf-schema#comment> "Software is a specific set of computer-interpretable instructions to perform one or more Computations." .
-<https://w3id.org/EVI#Software> <http://www.w3.org/2000/01/rdf-schema#label> "Software" .
-# 
-# https://www.w3.org/ns/prov#Activity
-<https://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#comment> "An Activity is a process by which an Entity is produced, modified, consumed or used." .
-<https://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Activity" .
-# 
-# https://www.w3.org/ns/prov#Agent
-<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Entity> .
-<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An Agent is an autonomous Entity. Persons and Organizations are Agents in EVI. Agents may be associatedWith Activities, and Entities may be attributedTo Agents." .
-<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Agent" .
-# 
-# https://www.w3.org/ns/prov#Entity
-<https://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:N2b0e6260a6d14db3b35eca0c82c66508 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#supports> .
 <https://www.w3.org/ns/prov#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "An Entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects." .
-<https://www.w3.org/ns/prov#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Entity" .
-# 
-# https://www.w3.org/ns/prov#Organization
-<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
-<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An Organization is a social or legal institution with structure and purpose such as a company, society, university, sports team, etc." .
-<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Organization" .
-# 
-# https://www.w3.org/ns/prov#Person
-<https://www.w3.org/ns/prov#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
-<https://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A Person is a human Agent." .
+<https://w3id.org/EVI#generated> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of generatedBy property." .
+<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#label> "usedService" .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A prov:Agent is a creator of a prov:Entity if it is createdBy the Agent." .
+<http://schema.org/Claim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#comment> "Refenrece to the publications where the item or its relevant information can be discovered." .
+<http://schema.org/dateModified> <http://www.w3.org/2000/01/rdf-schema#comment> "The date when the item was modifed last." .
+_:N7ac8284c91ac4bffa957425012b54369 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#label> "schema:fileFormat" .
+<https://w3id.org/EVI#Service> <http://www.w3.org/2000/01/rdf-schema#label> "Service" .
+<http://www.w3.org/ns/prov#Bundle> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Bundle" .
+<https://w3id.org/EVI#dataSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#generated> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
+_:N5301cd9a878d4955a4aeb3665dd0063a <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N4eddae4666c74b9c97a49ca0b2b38b20 .
+<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#supportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The supportedBy property is a transitive relation between DigitalObjects." .
+_:N666773303e1446038816e54e3e21f79c <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/EVI#created> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of createdBy property." .
+<https://w3id.org/EVI#Schema> <http://www.w3.org/2000/01/rdf-schema#label> "Schema" .
+<https://w3id.org/EVI#Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#SoftwareAgent> .
+_:N17971ccadfe0494485b7dae2ed371e61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Generation is the completion of production of a new prov:Entity by a prov:Activity. This entity did not exist before generation and becomes available for usage after this generation." .
 <https://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Person" .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# https://orcid.org/0000-0003-4060-7360
-<https://orcid.org/0000-0003-4060-7360> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-# 
-# https://orcid.org/0000-0003-4647-3877
-<https://orcid.org/0000-0003-4647-3877> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-# 
-# https://w3id.org/EVI
-<https://w3id.org/EVI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Annotations
-# #
-# #################################################################
-# 
-# 
+<https://w3id.org/EVI#framework> <http://www.w3.org/2000/01/rdf-schema#label> "framework" .
+<http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/SoftwareApplication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/EVI#modelType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+<https://w3id.org/EVI#parametersCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of variables a model learns during training. For current LLM models, this number ranges from millions to trillions that determines the performance and complexity of these models." .
+<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#long> .
+<https://w3id.org/EVI#Package> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata associated with digital resources that may be packaged together or referenced." .
+<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#comment> "Used to represent different forms of a DigitalObject. An image may be distributed as a JPEG, PNG, or SVG." .
+<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "The format of the item in question encoded into." .
+<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#Claim> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#challenges> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The use of directlySupportedBy property is intended to establish a direct relation between instances of DigitalObjects." .
+<https://w3id.org/EVI#state> <http://www.w3.org/2000/01/rdf-schema#comment> "Textual representation of a claim" .
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.w3.org/ns/prov#Bundle> <http://www.w3.org/2000/01/rdf-schema#comment> "A bundle is a named set of provenance descriptions, and is itself an Entity, so allowing provenance of provenance to be expressed." .
+<https://w3id.org/EVI#directlySupports> <http://www.w3.org/2000/01/rdf-schema#label> "directlySupports" .
+<https://w3id.org/EVI#describedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of describes property." .
+<http://schema.org/runtime> <http://www.w3.org/2000/01/rdf-schema#label> "schema:runtime" .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#derivedTo> .
+<http://schema.org/title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#Article> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#parametersCount> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedSoftware is a subproperty of used where domain is Computation and range is Software." .
+<https://w3id.org/EVI#state> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
+<http://schema.org/keywords> <http://www.w3.org/2000/01/rdf-schema#label> "schema:keywords" .
+<https://w3id.org/EVI#describedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#describes> .
+<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#domain> _:Nb68e12d6e59346089a39c0711c1b6052 .
+<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedService property." .
+<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "A prov:Agent that has some responsibility for the occurrence of this prov:Activity is associatedWith the prov:Activity." .
+<https://w3id.org/EVI#usedService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#derivedTo> <http://www.w3.org/2000/01/rdf-schema#label> "derivedTo" .
+<https://w3id.org/EVI#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#MLModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#directlyChallenges> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#challenges> <http://www.w3.org/2000/01/rdf-schema#label> "challenges" .
+<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of directlyChallenges property." .
+<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challengedBy> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Activity> .
+<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Entity> .
+<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#label> "schema:datePublished" .
+<http://schema.org/Dataset> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#Package> <http://www.w3.org/2000/01/rdf-schema#label> "Package" .
+<http://schema.org/title> <http://www.w3.org/2000/01/rdf-schema#comment> "The title of a Thing." .
+<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/2000/01/rdf-schema#label> "DigitalObject" .
+<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
+<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
+<https://w3id.org/EVI#MLModel> <http://www.w3.org/2000/01/rdf-schema#comment> "An MLModel is a computational model that has been trained on data to perform a specific task. It is a digital object that captures the learned parameters and architecture resulting from a machine learning training process (Computation)."@en .
+<http://schema.org/Service> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Service" .
+_:N2a95c47191824e0a8d53674395752438 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#directlyChallenges> .
+<https://w3id.org/EVI#supportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "supportedBy" .
+<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#label> "schema:dateCreated" .
+<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/2000/01/rdf-schema#comment> "A DigitalObject is an Entity which represents another Entity. DigitalObjects are always attributedTo an Agent, their creator, contributor, influencer or to an Activity they were generatedBy." .
+<http://schema.org/runtime> <http://www.w3.org/2000/01/rdf-schema#comment> "Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0)." .
+<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
+<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the item." .
+<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#comment> "The property usedService is a subproperty of used where domain is Computation and range is Service." .
+<http://schema.org/author> <http://www.w3.org/2000/01/rdf-schema#comment> "The author of the content." .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#parametersCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/title> "EVI: Evidence Graph Ontology"@en .
+<https://w3id.org/EVI#used> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedBy> .
+<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:N4eddae4666c74b9c97a49ca0b2b38b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nc08456ff66e7487d962bee0ad288ebd6 .
+<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/EVI/1.2> .
+<http://schema.org/datePublished> <http://www.w3.org/2000/01/rdf-schema#domain> _:Na341cade5df7416fa0fc8cd5e200d20a .
+_:N640fb088466a41e683040b8b91eceb73 <http://www.w3.org/2002/07/owl#unionOf> _:N17971ccadfe0494485b7dae2ed371e61 .
+<https://w3id.org/EVI#dataSchema> <http://www.w3.org/2000/01/rdf-schema#label> "dataSchema" .
+<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
+<https://w3id.org/EVI#Distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:N8f59881000c34ea888a66d16e3fcc7a7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N7184b94320474f6797b6a0a8eb8dda84 .
+_:Nba3cc71b22eb418c8b03f631e364a8d4 <http://www.w3.org/2002/07/owl#unionOf> _:N30ab2c1a589242efaa464bbd4a9d22f5 .
+<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#label> "schema:contentSize" .
+<https://w3id.org/EVI#directlySupports> <http://www.w3.org/2000/01/rdf-schema#comment> "The directlySupports property is a non-transitive version of supports, a subproperty of supports. directlySupports is a superproperty of the properties attributed (inverse of attributedTo), derived (inverse of derivedFrom), associated (inverse of associatedWith), used, and generated (inverse of generatedBy)." .
+<https://w3id.org/EVI#usedMLModel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#MLModel> .
+_:N9fe00874ee1140099f4ff5d1a8a06bd2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#describedBy> <http://www.w3.org/2000/01/rdf-schema#label> "describedBy" .
+<https://w3id.org/EVI#indirectlyChallenges> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#represents> <http://www.w3.org/2000/01/rdf-schema#label> "represents" .
+_:N7184b94320474f6797b6a0a8eb8dda84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#Reference> <http://www.w3.org/2000/01/rdf-schema#label> "Reference" .
+<https://w3id.org/EVI#created> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupports> .
+_:Nf6baaac2ae19410d826477c86e93aa22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#label> "schema:endTime" .
+_:Nee56742a1c524eefba7f015572ab5965 <http://www.w3.org/2002/07/owl#unionOf> _:Nb6530a0fd8e448bf91e980b1094da6e8 .
+_:N656d1f893b73479faf005b0166bb7695 <http://www.w3.org/2002/07/owl#unionOf> _:N889afee0109c4667a285af07340dad3c .
 <http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity responsible for making the resource. Examples of a creator include a person, an organization, or a service i.e. a SoftwareAgent. Typically, the name of a creator should be used to indicate the entity." .
-<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "terms:creator" .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Rules
-# #
-# #################################################################
-# 
-# 
-<https://w3id.org/EVI#computation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
-<https://w3id.org/EVI#data1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
-<https://w3id.org/EVI#data2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
-_:genid45 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-_:genid45 <http://www.w3.org/2000/01/rdf-schema#comment> "" .
-_:genid45 <http://www.w3.org/2000/01/rdf-schema#label> "S1" .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
-_:genid45 <http://www.w3.org/2003/11/swrl#body> _:genid48 .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid47 .
-_:genid47 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/EVI#computation> .
-_:genid47 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/EVI#data2> .
-_:genid47 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/EVI#generatedBy> .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid49 .
-_:genid49 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/EVI#data1> .
-_:genid49 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/EVI#computation> .
-_:genid49 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/EVI#usedDataset> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-_:genid45 <http://www.w3.org/2003/11/swrl#head> _:genid50 .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
-_:genid51 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/EVI#data2> .
-_:genid51 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/EVI#data1> .
-_:genid51 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/EVI#supports> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
-# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
+<https://w3id.org/EVI#representedBy> <http://www.w3.org/2000/01/rdf-schema#label> "representedBy" .
+<https://w3id.org/EVI#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
+<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#label> "usedSoftware" .
+<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#usedBy> .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#Container> <http://www.w3.org/2000/01/rdf-schema#comment> "A container is a digital object that can be defined as packages of software. Instances of containers are accompanied by all necessary dependencies such as specific versions, runtime environment and required libraries for execution." .
+<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset" .
+<https://w3id.org/EVI#Image> <http://www.w3.org/2000/01/rdf-schema#label> "Image" .
+<https://w3id.org/EVI#framework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#describes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#label> "prov:SoftwareAgent" .
+<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#domain> _:N5c9c66fc760d4252ad7a42ce375a8b4e .
+<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://schema.org/SoftwareApplication> <http://www.w3.org/2000/01/rdf-schema#label> "schema:SoftwareApplication" .
+<https://w3id.org/EVI#associatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Agent> .
+_:Nc43f5969fcee4317bf697e29229e71d8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Nf6baaac2ae19410d826477c86e93aa22 .
+<http://schema.org/Claim> <http://www.w3.org/2000/01/rdf-schema#comment> "A Claim in Schema.org represents a specific, factually-oriented claim that could be the itemReviewed in a ClaimReview. The content of a claim can be summarized with the text property. Variations on well known claims can have their common identity indicated via sameAs links, and summarized with a name. Ideally, a Claim description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.\n\nBeyond ClaimReview, the Claim type can be associated with related creative works - for example a ScholaryArticle or Question might be about some Claim.\n\nAt this time, Schema.org does not define any types of relationship between claims. This is a natural area for future exploration." .
+<http://schema.org/encodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "softwareUsedBy" .
+<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#label> "schema:license" .
+_:N86b379137d3d4f95a9b54f23c7682f1d <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/EVI#supports> <http://www.w3.org/2000/01/rdf-schema#label> "supports" .
+<http://schema.org/endTime> <http://www.w3.org/2000/01/rdf-schema#comment> "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions." .
+<https://w3id.org/EVI#intendedUseCase> <http://www.w3.org/2000/01/rdf-schema#label> "intendedUseCase" .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/EVI#EvidenceGraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#Reference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<http://schema.org/dateCreated> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Dataset> .
+<http://schema.org/endTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Nb6530a0fd8e448bf91e980b1094da6e8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N3296ec73c8a44bb2ba1818e1f59d5ee5 .
+<https://w3id.org/EVI#DigitalContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "datasetUsedBy" .
+<https://w3id.org/EVI#publicationVenue> <http://www.w3.org/2000/01/rdf-schema#domain> _:N69e9bc263b7a492da24c709fe879c29c .
+_:Nf6baaac2ae19410d826477c86e93aa22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#label> "schema:Person" .
+<http://schema.org/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#domain> _:Nfa1193854ed94c35a7ce1c5dbf50be12 .
+<http://schema.org/Article> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Article> .
+_:N1a0acc0547f2406aa0bf383c1955b46f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#Distribution> <http://www.w3.org/2000/01/rdf-schema#comment> "The placement of instances of DigitalObjects. A single DigitalObject may be represented in multiple forms, hence resulting in multiple distributions. An Image can be encoded and distributed as any of the JPEG, PNG, SVG." .
+<https://w3id.org/EVI#directlySupportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "directlySupportedBy" .
+<https://w3id.org/EVI#DigitalObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/EVI#associatedPublication> <http://www.w3.org/2000/01/rdf-schema#domain> _:N656d1f893b73479faf005b0166bb7695 .
+<https://w3id.org/EVI#packages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#Computation> <http://www.w3.org/2000/01/rdf-schema#comment> "Computation is an Activity performed on a Dataset with the help of a Software." .
+_:N3296ec73c8a44bb2ba1818e1f59d5ee5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://schema.org/Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/EVI#hasBias> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#comment> "File size in (tera/giga/mega/kilo) bytes." .
+_:Nd1e9f5743eed4ccea29525833a324206 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<http://schema.org/dateModified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/EVI#Computation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Activity> .
+<https://w3id.org/EVI#directlyChallengedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#directlyChallenges> .
+<https://w3id.org/EVI#Software> <http://www.w3.org/2000/01/rdf-schema#comment> "Software is a specific set of computer-interpretable instructions to perform one or more Computations." .
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#createdBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.w3.org/ns/prov#Entity> .
+<http://schema.org/license> <http://www.w3.org/2000/01/rdf-schema#domain> _:Nee56742a1c524eefba7f015572ab5965 .
+<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#versionInfo> "1.2"@en .
+<https://w3id.org/EVI#intendedUseCase> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.org/SoftwareApplication> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/EVI#Software> .
+_:Na341cade5df7416fa0fc8cd5e200d20a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A service provided by an organization, e.g. delivery service, print services, etc" .
+<https://w3id.org/EVI#Container> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI#usedDataset> <http://www.w3.org/2000/01/rdf-schema#label> "usedDataset" .
+<http://schema.org/fileFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "Media type, typically MIME format (see IANA site) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry." .
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links." .
+_:N37ffb79d9a2d409c92e86008f6519fed <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+_:Nb68e12d6e59346089a39c0711c1b6052 <http://www.w3.org/2002/07/owl#unionOf> _:N8162949e877349c5bd155cb373771e67 .
+<https://w3id.org/EVI#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/EVI#mlModelUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#range> _:N2419b5b626154ae6b71f75b474dc6817 .
+<https://www.w3.org/ns/prov#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Entity" .
+<http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/EVI#Distribution> <http://www.w3.org/2000/01/rdf-schema#label> "Distribution" .
+_:N3296ec73c8a44bb2ba1818e1f59d5ee5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#inputSize> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A body of structured information describing some topic(s) of interest." .
+<http://schema.org/author> <http://www.w3.org/2000/01/rdf-schema#label> "schema:author" .
+<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "generatedBy" .
+_:Nc43f5969fcee4317bf697e29229e71d8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#associatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#generatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#label> "contentUrl" .
+<https://w3id.org/EVI#representedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of represents property." .
+_:Nce33bcf0eca3438ca339c18cbafc8472 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "A Service is considered a SoftwareAgent that can be invoked and executed. A Software is different from SoftwareAgent in the context that it can be downloaded." .
+<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "prov:Agent" .
+<https://w3id.org/EVI#Claim> <http://www.w3.org/2000/01/rdf-schema#label> "Claim" .
+<https://w3id.org/EVI#mlModelUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedMLModel property." .
+_:Nbaeeda7fc8d44f68bd57717aefd165a1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/EVI#Container> <http://www.w3.org/2000/01/rdf-schema#label> "Container" .
+_:N69e9bc263b7a492da24c709fe879c29c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#SoftwareAgent> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#Image> <http://www.w3.org/2000/01/rdf-schema#comment> "An Image is a visual representation of structured or unstructured data produced digitally." .
+_:N2419b5b626154ae6b71f75b474dc6817 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:Nb6530a0fd8e448bf91e980b1094da6e8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#serviceUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedService> .
+<https://w3id.org/EVI#softwareUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#usedSoftware> .
+<https://w3id.org/EVI#Method> <http://www.w3.org/2000/01/rdf-schema#label> "Method" .
+<http://schema.org/version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/contentSize> <http://www.w3.org/2000/01/rdf-schema#domain> _:Na2a23265f6ca456b8af943cdb0ed1672 .
+<https://w3id.org/EVI#derivedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of derivedFrom property." .
+_:Nfb3c47769a3d42419011542893754191 <http://www.w3.org/2002/07/owl#unionOf> _:N86b379137d3d4f95a9b54f23c7682f1d .
+_:Nc08456ff66e7487d962bee0ad288ebd6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#represents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Nddeb8932f5be4be1b2be7c3b08c3cd83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Software> .
+<https://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/EVI> <http://purl.org/dc/terms/created> "2020-07-27"@en .
+_:Nc08456ff66e7487d962bee0ad288ebd6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Nc438f93256cc4b82ba6c3f9b7ef21214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Neb884f4e80674c5bb4037a54ab34d6bd .
+<https://w3id.org/EVI#associateFor> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#associatedWith> .
+<http://schema.org/version> <http://www.w3.org/2000/01/rdf-schema#comment> "The version of the DigitalObject." .
+_:Nb68e12d6e59346089a39c0711c1b6052 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#framework> <http://www.w3.org/2000/01/rdf-schema#comment> "The machine learning framework used to create the model (e.g., PyTorch, TensorFlow)." .
+_:N3d13ed0d04f04c51a095f813997f2c7e <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Nbaeeda7fc8d44f68bd57717aefd165a1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#framework> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#MLModel> .
+_:Na2a23265f6ca456b8af943cdb0ed1672 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/EVI#contentUrl> <http://www.w3.org/2000/01/rdf-schema#comment> "The contentUrl property provides the access to the actual byes of the DigitalContent that can be downloaded and examined." .
+<https://w3id.org/EVI#challengedBy> <http://www.w3.org/2000/01/rdf-schema#label> "challengedBy" .
+<https://w3id.org/EVI#hasBias> <http://www.w3.org/2000/01/rdf-schema#label> "hasBias" .
+<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#challengedBy> .
+<http://schema.org/contentSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/author> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.w3.org/ns/prov#Agent> .
+<https://w3id.org/EVI#datasetUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of usedDataset property." .
+<https://w3id.org/EVI#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#DigitalObject> .
+<https://w3id.org/EVI> <http://www.w3.org/2002/07/owl#versionIRI> "http://www.w3.org/2002/07/owl"@en .
+_:N889afee0109c4667a285af07340dad3c <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N8f59881000c34ea888a66d16e3fcc7a7 .
+<https://w3id.org/EVI#used> <http://www.w3.org/2000/01/rdf-schema#comment> "An Activity used an Entity, when the Entity (such as a Dataset or a Software) was instrumental in enabling that Activity to occur." .
+<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/EVI#representedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#represents> .
+<http://schema.org/fileFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:N86b379137d3d4f95a9b54f23c7682f1d <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:N4172f5b5abb849a998fabbdaea104bde .
+_:Nee56742a1c524eefba7f015572ab5965 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Na341cade5df7416fa0fc8cd5e200d20a <http://www.w3.org/2002/07/owl#unionOf> _:Nd1e9f5743eed4ccea29525833a324206 .
+<https://w3id.org/EVI#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/EVI#Software> .
+<https://w3id.org/EVI#usedService> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#used> .
+<https://w3id.org/EVI#challengedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Reverse of challenges property." .
+<https://w3id.org/EVI#modelType> <http://www.w3.org/2000/01/rdf-schema#label> "modelType" .
+_:N9fe00874ee1140099f4ff5d1a8a06bd2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:N7184b94320474f6797b6a0a8eb8dda84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:N3d13ed0d04f04c51a095f813997f2c7e <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/EVI#generatedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/EVI#directlySupportedBy> .
+<http://schema.org/startTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/EVI#Computation> .
+<https://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#comment> "An Activity is a process by which an Entity is produced, modified, consumed or used." .
+<https://w3id.org/EVI#packagedBy> <http://www.w3.org/2000/01/rdf-schema#label> "packagedBy" .
+<http://schema.org/dateCreated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An Agent is an autonomous Entity. Persons and Organizations are Agents in EVI. Agents may be associatedWith Activities, and Entities may be attributedTo Agents." .
+<https://w3id.org/EVI#describes> <http://www.w3.org/2000/01/rdf-schema#label> "describes" .
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of the item." .
+<https://w3id.org/EVI#indirectlyChallengedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/EVI#indirectlyChallenges> .
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#label> "schema:description" .
+<https://w3id.org/EVI#ROCrate> <http://www.w3.org/2000/01/rdf-schema#comment> "An approach to packaging research data with their metadata." .
+<https://w3id.org/EVI#ROCrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:N4eddae4666c74b9c97a49ca0b2b38b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/EVI#Dataset> .
+<https://w3id.org/EVI#additionalDocumentation> <http://www.w3.org/2000/01/rdf-schema#comment> "Any additional information of the item that may be useful." .
