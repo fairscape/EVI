@@ -341,9 +341,6 @@
         <DataProperty IRI="http://schema.org/version"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#activationsMillions"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#additionalDocumentation"/>
     </Declaration>
     <Declaration>
@@ -353,10 +350,13 @@
         <DataProperty IRI="#framework"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#gmacs"/>
+        <DataProperty IRI="#hasBias"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#inputSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#intendedUseCase"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#modelFormat"/>
@@ -365,7 +365,7 @@
         <DataProperty IRI="#modelType"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#parametersMillions"/>
+        <DataProperty IRI="#parametersCount"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#publicationVenue"/>
@@ -997,10 +997,6 @@
         <Class IRI="#Computation"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#activationsMillions"/>
-        <Class IRI="#MLModel"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#additionalDocumentation"/>
         <ObjectUnionOf>
             <Class IRI="#Computation"/>
@@ -1021,11 +1017,15 @@
         <Class IRI="#MLModel"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#gmacs"/>
+        <DataProperty IRI="#hasBias"/>
         <Class IRI="#MLModel"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#inputSize"/>
+        <Class IRI="#MLModel"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#intendedUseCase"/>
         <Class IRI="#MLModel"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1037,7 +1037,7 @@
         <Class IRI="#MLModel"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#parametersMillions"/>
+        <DataProperty IRI="#parametersCount"/>
         <Class IRI="#MLModel"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1119,10 +1119,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#activationsMillions"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#additionalDocumentation"/>
         <DataUnionOf>
             <Datatype abbreviatedIRI="xsd:anyURI"/>
@@ -1141,11 +1137,15 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#gmacs"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
+        <DataProperty IRI="#hasBias"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#inputSize"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#intendedUseCase"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1157,8 +1157,8 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#parametersMillions"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
+        <DataProperty IRI="#parametersCount"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#publicationVenue"/>
@@ -1639,16 +1639,6 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#activationsMillions</IRI>
-        <Literal>A measure of the memory required during a forward pass, in millions of activation values.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#activationsMillions</IRI>
-        <Literal>activationsMillions</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#additionalDocumentation</IRI>
         <Literal>Any additional information of the item that may be useful.</Literal>
     </AnnotationAssertion>
@@ -1899,13 +1889,13 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#gmacs</IRI>
-        <Literal>Giga multiply-accumulate operations (GMACs), a measure of computational cost.</Literal>
+        <IRI>#hasBias</IRI>
+        <Literal>Any issue of a model that may consistently deviate its outcome to be incorrect or unfair.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#gmacs</IRI>
-        <Literal>gmacs</Literal>
+        <IRI>#hasBias</IRI>
+        <Literal>hasBias</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1940,7 +1930,7 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#inputSize</IRI>
-        <Literal>The expected input size or shape for the model.</Literal>
+        <Literal>The expected input size or shape the model is designed to receive and process at one time. For example, image classificatoin models such as ResNet, VGG commonly use 224x224 pixels with 3 channels while Language Models such as BERT, GPT use tokens or context length from thousand to millions.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1949,8 +1939,18 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#intendedUseCase</IRI>
+        <Literal>The context in which this model is intended to be used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#intendedUseCase</IRI>
+        <Literal>intendedUseCase</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#mlModelUsedBy</IRI>
-        <Literal>Reverse of usedModel property.</Literal>
+        <Literal>Reverse of usedMLModel property.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1999,13 +1999,13 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp;amp; Lagasquie-
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#parametersMillions</IRI>
-        <Literal>The number of trainable parameters in the model, in millions.</Literal>
+        <IRI>#parametersCount</IRI>
+        <Literal>The number of variables a model learns during training. For current LLM models, this number ranges from millions to trillions that determines the performance and complexity of these models.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#parametersMillions</IRI>
-        <Literal>parametersMillions</Literal>
+        <IRI>#parametersCount</IRI>
+        <Literal>parametersCount</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
