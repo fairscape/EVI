@@ -64,16 +64,16 @@
             <!--TITLE-->
             <h1>EVI: Evidence Graph Ontology</h1>
             <!--RELEASE INFO-->
-            <h2>Release 2025-11-13</h2>
+            <h2>Release 2025-12-04</h2>
 
 
             <dl>
                 <!--VERSIONS: CURRENT, PREVIOUS, REVISION-->
                 <dt>Current version:</dt>
-                <dd><a href="https://github.com/fairscape/EVI/blob/master/Ontology/versions/v1.2/evi.owl">1.2</a>
+                <dd><a href="https://github.com/fairscape/EVI/blob/master/Ontology/versions/v1.3/evi.owl">1.3</a>
                 </dd>
                 <dt>Previous version:</dt>
-                <dd><a href="https://github.com/fairscape/EVI/blob/master/Ontology/versions/v1.1/evi.owl">1.1</a>
+                <dd><a href="https://github.com/fairscape/EVI/blob/master/Ontology/versions/v1.2/evi.owl">1.2</a>
                 </dd>
                 <!--dt>Revision:</dt>
                     <dd>1.1</dd-->
@@ -354,9 +354,6 @@
                    <a href="#createdBy" title="https://w3id.org/EVI#createdBy">createdBy</a>
                 </li>
                 <li>
-                   <a href="#hasSchema" title="https://w3id.org/EVI#hasSchema">hasSchema</a>
-                </li>
-                <li>
                    <a href="#datasetUsedBy" title="https://w3id.org/EVI#datasetUsedBy">datasetUsedBy</a>
                 </li>
                 <li>
@@ -390,6 +387,9 @@
                    <a href="#generatedBy" title="https://w3id.org/EVI#generatedBy">generatedBy</a>
                 </li>
                 <li>
+                   <a href="#hasSchema" title="https://w3id.org/EVI#hasSchema">hasSchema</a>
+                </li>
+                <li>
                    <a href="#indirectlyChallengedBy" title="https://w3id.org/EVI#indirectlyChallengedBy">indirectlyChallengedBy</a>
                 </li>
                 <li>
@@ -419,6 +419,9 @@
                   <li>
                      <a href="#sampleUsedBy" title="https://w3id.org/EVI#sampleUsedBy">sampleUsedBy</a>
                   </li>
+                <li>
+                   <a href="#schemaFor" title="https://w3id.org/EVI#schemaFor">schemaFor</a>
+                </li>
                 <li>
                    <a href="#serviceUsedBy" title="https://w3id.org/EVI#serviceUsedBy">serviceUsedBy</a>
                 </li>
@@ -498,6 +501,9 @@
                 <li>
                    <a href="#http://schema.org/contentSize" title="http://schema.org/contentSize">schema:contentSize</a>
                 </li>
+               <li>
+                   <a href="#http://schema.org/contentUrl" title="http://schema.org/contentUrl">schema:contentUrl</a>
+               </li>
                 <li>
                    <a href="#http://schema.org/dateCreated" title="http://schema.org/dateCreated">schema:dateCreated</a>
                 </li>
@@ -1035,24 +1041,9 @@
                     <p>
                        <strong>IRI:</strong> https://w3id.org/EVI#Experiment</p>
                     <div class="comment">
-                       <span class="markdown">An Experiment is an Activity accessed online, which executes a Computation.</span>
+                       <span class="markdown">An experiment is an activity where samples are treated with reagents and analyzed using instruments.</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                
-                                # The Datacite DOI Registration Agency provides a Service online to generate globally unique Digital Object Identifiers (DOIs).
-                                
-                                &lt;https://doi.datacite.org/&gt; a evi:Experiment .
-
-                                # The bit.ly URL shortener is an Experiment.
-                                
-                                &lt;https://bitly.com/&gt; a evi:Experiment .
-                            </pre>
-                        </div>
+                    
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -1121,24 +1112,9 @@
                     <p>
                        <strong>IRI:</strong> https://w3id.org/EVI#Instrument</p>
                     <div class="comment">
-                       <span class="markdown">An Instrument is an Entity accessed online, which executes a Computation.</span>
+                       <span class="markdown">An Instrument is an entity such as a tool, device or equipment that is used in an experiment to perform measurements or manipulations, observations, or other actions.</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                
-                                # The Datacite DOI Registration Agency provides a Service online to generate globally unique Digital Object Identifiers (DOIs).
-                                
-                                &lt;https://doi.datacite.org/&gt; a evi:Instrument .
-
-                                # The bit.ly URL shortener is an Instrument.
-                                
-                                &lt;https://bitly.com/&gt; a evi:Instrument .
-                            </pre>
-                        </div>
+                    
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -1591,24 +1567,8 @@
                     <p>
                        <strong>IRI:</strong> https://w3id.org/EVI#Reagent</p>
                     <div class="comment">
-                       <span class="markdown">A Reagent is an Entity accessed online, which executes a Computation.</span>
+                       <span class="markdown">A Reagent is an entity such as chemical substance or biological material that is used to initiate reactions in an experiment</span>
                     </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                
-                                # The Datacite DOI Registration Agency provides a Service online to generate globally unique Digital Object Identifiers (DOIs).
-                                
-                                &lt;https://doi.datacite.org/&gt; a evi:Reagent .
-
-                                # The bit.ly URL shortener is a Reagent.
-                                
-                                &lt;https://bitly.com/&gt; a evi:Reagent .
-                            </pre>
-                        </div>
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -1694,24 +1654,8 @@
                     <p>
                        <strong>IRI:</strong> https://w3id.org/EVI#Sample</p>
                     <div class="comment">
-                       <span class="markdown">A Sample is an Entity accessed online, which executes a Computation.</span>
-                    </div>
-                    <br/>
-                        <div class="example">
-                            <strong class="crossreference">Example</strong>
-                            <pre>
-                                @prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-                                @prefix evi:     &lt;http://w3id.org/EVI#&gt; .
-                                
-                                # The Datacite DOI Registration Agency provides a Service online to generate globally unique Digital Object Identifiers (DOIs).
-                                
-                                &lt;https://doi.datacite.org/&gt; a evi:Sample .
-
-                                # The bit.ly URL shortener is a Sample.
-                                
-                                &lt;https://bitly.com/&gt; a evi:Sample .
-                            </pre>
-                        </div>
+                       <span class="markdown">A sample is an entity such as a biological/physical specimen or material that is being tested in an experiment.</span>
+                    </div>                    
                     <dl class="description">
                        <dt>has super-classes</dt>
                        <dd>
@@ -2064,9 +2008,6 @@
                        <a href="#createdBy" title="https://w3id.org/EVI#createdBy">createdBy</a>
                     </li>
                     <li>
-                       <a href="#hasSchema" title="https://w3id.org/EVI#hasSchema">hasSchema</a>
-                    </li>
-                    <li>
                        <a href="#datasetUsedBy" title="https://w3id.org/EVI#datasetUsedBy">datasetUsedBy</a>
                     </li>
                     <li>
@@ -2100,6 +2041,9 @@
                        <a href="#generatedBy" title="https://w3id.org/EVI#generatedBy">generatedBy</a>
                     </li>
                     <li>
+                       <a href="#hasSchema" title="https://w3id.org/EVI#hasSchema">hasSchema</a>
+                    </li>
+                    <li>
                        <a href="#indirectlyChallengedBy" title="https://w3id.org/EVI#indirectlyChallengedBy">indirectlyChallengedBy</a>
                     </li>
                     <li>
@@ -2130,6 +2074,9 @@
                      <li>
                          <a href="#sampleUsedBy" title="https://w3id.org/EVI#sampleUsedBy">sampleUsedBy</a>
                      </li>
+                    <li>
+                       <a href="#schemaFor" title="https://w3id.org/EVI#schemaFor">schemaFor</a>
+                    </li>
                     <li>
                        <a href="#serviceUsedBy" title="https://w3id.org/EVI#serviceUsedBy">serviceUsedBy</a>
                     </li>
@@ -2481,31 +2428,6 @@
                           <dd>
                              <a href="#created" title="https://w3id.org/EVI#created">created</a>
                              <sup class="type-op" title="object property">op</sup>
-                          </dd>
-                       </dl>
-                    </div>
-                 </div>
-                 <div class="entity" id="hasSchema">
-                    <h3>hasSchema<sup class="type-op" title="object property">op</sup>
-                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-                       </span>
-                    </h3>
-                    <p>
-                       <strong>IRI:</strong> https://w3id.org/EVI#hasSchema</p>
-                    <div class="comment">
-                       <span class="markdown">The hasSchema property describes the content-level schema of a DigitalObject that may be distributed in one or more ways.</span>
-                    </div>
-                    <div class="description">
-                       <dl>
-                          <dt>has domain</dt>
-                          <dd>
-                             <a href="#Dataset" title="https://w3id.org/EVI#Dataset">Dataset</a>
-                             <sup class="type-c" title="class">c</sup>
-                          </dd>
-                          <dt>has range</dt>
-                          <dd>
-                             <a href="#Schema" title="https://w3id.org/EVI#Schema">Schema</a>
-                             <sup class="type-c" title="class">c</sup>
                           </dd>
                        </dl>
                     </div>
@@ -2925,6 +2847,36 @@
                        </dl>
                     </div>
                  </div>
+                                  <div class="entity" id="hasSchema">
+                    <h3>hasSchema<sup class="type-op" title="object property">op</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> https://w3id.org/EVI#hasSchema</p>
+                    <div class="comment">
+                       <span class="markdown">The hasSchema property describes the content-level schema of a Dataset.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#Dataset" title="https://w3id.org/EVI#Dataset">Dataset</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <a href="#Schema" title="https://w3id.org/EVI#Schema">Schema</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>is inverse of</dt>
+                          <dd>
+                             <a href="#schemaFor" title="https://w3id.org/EVI#schemaFor">schemaFor</a>
+                             <sup class="type-op" title="object property">op</sup>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>
                  <div class="entity" id="indirectlyChallengedBy">
                     <h3>indirectlyChallengedBy<sup class="type-op" title="object property">op</sup>
                        <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -3230,6 +3182,26 @@
                        </dl>
                     </div>
                  </div>
+                 <div class="entity" id="https://w3id.org/EVI#schemaFor">
+                  <h3>schemaFor<sup class="type-op" title="object property">op</sup>
+                     <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+                     </span>
+                  </h3>
+                  <p>
+                     <strong>IRI:</strong> https://w3id.org/EVI#schemaFor</p>
+                  <div class="comment">
+                     <span class="markdown">Reverse of hasSchema property.</span>
+                  </div>
+                  <div class="description">
+                     <dl>
+                        <dt>is inverse of</dt>
+                        <dd>
+                           <a href="#https://w3id.org/EVI#hasSchema" title="https://w3id.org/EVI#hasSchema">hasSchema</a>
+                           <sup class="type-op" title="object property">op</sup>
+                        </dd>
+                     </dl>
+                  </div>
+               </div>
                  <div class="entity" id="serviceUsedBy">
                     <h3>serviceUsedBy<sup class="type-op" title="object property">op</sup>
                        <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -3609,7 +3581,7 @@
                     <p>
                        <strong>IRI:</strong> https://w3id.org/EVI#usedInstrument</p>
                     <div class="comment">
-                       <span class="markdown">The property usedInstrument is a subproperty of used where domain is Computation and range is Instrument.</span>
+                       <span class="markdown">The property usedInstrument is a subproperty of used where domain is Experiment and range is Instrument.</span>
                     </div>
                     <br/>                        
                     <div class="description">
@@ -3865,6 +3837,9 @@
                     </li>
                     <li>
                        <a href="#http://schema.org/contentSize" title="http://schema.org/contentSize">schema:contentSize</a>
+                    </li>
+                    <li>
+                       <a href="#http://schema.org/contentUrl" title="http://schema.org/contentUrl">schema:contentUrl</a>
                     </li>
                     <li>
                        <a href="#http://schema.org/dateCreated" title="http://schema.org/dateCreated">schema:dateCreated</a>
@@ -4220,6 +4195,33 @@
                        </dl>
                     </div>
                  </div>
+                 <div class="entity" id="http://schema.org/contentUrl">
+                    <h3>schema:contentUrl<sup class="type-dp" title="data property">dp</sup>
+                       <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+                       </span>
+                    </h3>
+                    <p>
+                       <strong>IRI:</strong> http://schema.org/contentUrl</p>
+                    <div class="comment">
+                       <span class="markdown">Actual bytes of the object, for example the data file or image file or video file.</span>
+                    </div>
+                    <div class="description">
+                       <dl>
+                          <dt>has domain</dt>
+                          <dd>
+                             <a href="#Dataset" title="https://w3id.org/EVI#Dataset">Dataset</a>
+                             <sup class="type-c" title="class">c</sup> 
+                             <span class="logic">or</span> 
+                             <a href="#Software" title="https://w3id.org/EVI#Software">Software</a>
+                             <sup class="type-c" title="class">c</sup>
+                          </dd>
+                          <dt>has range</dt>
+                          <dd>
+                             <span class="dotted" title="http://www.w3.org/2001/XMLSchema#long">long</span>
+                          </dd>
+                       </dl>
+                    </div>
+                 </div>                 
                  <div class="entity" id="http://schema.org/dateCreated">
                     <h3>schema:dateCreated<sup class="type-dp" title="data property">dp</sup>
                        <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
