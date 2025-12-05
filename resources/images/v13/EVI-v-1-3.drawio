@@ -441,19 +441,6 @@
         <mxCell id="wbkNuD00gVdHBymqHrgm-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Software&lt;br&gt;Agent" vertex="1">
           <mxGeometry height="39" width="77" x="644" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="wbkNuD00gVdHBymqHrgm-11" edge="1" parent="1" source="wbkNuD00gVdHBymqHrgm-10" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="364" y="119" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="wbkNuD00gVdHBymqHrgm-15" connectable="0" parent="wbkNuD00gVdHBymqHrgm-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="isA" vertex="1">
-          <mxGeometry relative="1" x="-0.5098" y="-1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="wbkNuD00gVdHBymqHrgm-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Bundle" vertex="1">
-          <mxGeometry height="30" width="60" x="258" y="159" as="geometry" />
-        </mxCell>
         <mxCell id="O1g-6m43iPjhQk9eyBl7-6" edge="1" parent="1" source="wbkNuD00gVdHBymqHrgm-1" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="480" y="500" as="sourcePoint" />

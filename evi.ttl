@@ -96,6 +96,14 @@ At this time, Schema.org does not define any types of relationship between claim
             owl:unionOf ( :Dataset :Software ) ] ;
     rdfs:range xsd:long .
 
+<http://schema.org/contentUrl> a owl:DatatypeProperty ;
+    rdfs:label "schema:contentUrl" ;
+    rdfs:comment "Actual bytes of the object, for example the data file or image file or video file." ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Dataset :Software ) ] ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty :contentUrl .
+
 <http://schema.org/dateCreated> a owl:DatatypeProperty ;
     rdfs:label "schema:dateCreated" ;
     rdfs:comment "Date when the item was created." ;
@@ -196,10 +204,6 @@ swrla:isRuleEnabled a owl:AnnotationProperty .
 
 owl:versionIRI a owl:AnnotationProperty .
 
-prov:Bundle a owl:Class ;
-    rdfs:label "prov:Bundle" ;
-    rdfs:comment "A bundle is a named set of provenance descriptions, and is itself an Entity, so allowing provenance of provenance to be expressed." .
-
 evi: a owl:NamedIndividual,
         owl:Ontology ;
     dcterms:contributor <https://github.com/jniestroy>,
@@ -209,14 +213,14 @@ evi: a owl:NamedIndividual,
         <https://orcid.org/0000-0003-4647-3877> ;
     dcterms:description "The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2)."@en ;
     dcterms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/> ;
-    dcterms:modified "2025-11-07"@en ;
+    dcterms:modified "2025-12-05"@en ;
     dcterms:title "EVI: Evidence Graph Ontology"@en ;
     vann:preferredNamespacePrefix "evi" ;
     vann:preferredNamespaceUri <http://w3id.org/EVI> ;
-    owl:priorVersion "1.1"@en ;
-    owl:versionIRI <https://w3id.org/EVI/1.2>,
+    owl:priorVersion "1.2"@en ;
+    owl:versionIRI <https://w3id.org/EVI/1.3>,
         "http://www.w3.org/2002/07/owl"@en ;
-    owl:versionInfo "1.2"@en .
+    owl:versionInfo "1.3"@en .
 
 :EvidenceGraph a owl:Class ;
     rdfs:label "EvidenceGraph" ;
@@ -271,23 +275,11 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:comment "Reverse of contains property." ;
     owl:inverseOf :contains .
 
-:contentUrl a owl:ObjectProperty ;
-    rdfs:label "contentUrl" ;
-    rdfs:comment "The contentUrl property provides the access to the actual byes of the DigitalContent that can be downloaded and examined." ;
-    rdfs:domain :Distribution ;
-    rdfs:range :DigitalContent .
-
 :created a owl:ObjectProperty ;
     rdfs:label "created" ;
     rdfs:comment "Reverse of createdBy property." ;
     rdfs:subPropertyOf :directlySupports ;
     owl:inverseOf :createdBy .
-
-:dataSchema a owl:ObjectProperty ;
-    rdfs:label "dataSchema" ;
-    rdfs:comment "The dataSchema property describes the content-level schema of a DigitalObject that may be distributed in one or more ways." ;
-    rdfs:domain :Distribution ;
-    rdfs:range :Schema .
 
 :datasetUsedBy a owl:ObjectProperty ;
     rdfs:label "datasetUsedBy" ;
@@ -314,11 +306,6 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:subPropertyOf :challengedBy ;
     owl:inverseOf :directlyChallenges .
 
-:distributedFrom a owl:ObjectProperty ;
-    rdfs:label "distributedFrom" ;
-    rdfs:comment "Reverse of hasDistribution property." ;
-    owl:inverseOf :hasDistribution .
-
 :framework a owl:DatatypeProperty ;
     rdfs:label "framework" ;
     rdfs:comment "The machine learning framework used to create the model (e.g., PyTorch, TensorFlow)." ;
@@ -337,6 +324,13 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:domain :MLModel ;
     rdfs:range xsd:string .
 
+:hasSchema a owl:ObjectProperty ;
+    rdfs:label "hasSchema" ;
+    rdfs:comment "The hasSchema property describes the content-level schema of a Dataset." ;
+    rdfs:domain :Dataset ;
+    rdfs:range :Schema ;
+    owl:inverseOf :schemaFor .
+
 :indirectlyChallengedBy a owl:ObjectProperty ;
     rdfs:label "indirectlyChallengedBy" ;
     rdfs:comment "Reverse of indirectlyChallenges property." ;
@@ -348,6 +342,12 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:comment "The expected input size or shape the model is designed to receive and process at one time. For example, image classificatoin models such as ResNet, VGG commonly use 224x224 pixels with 3 channels while Language Models such as BERT, GPT use tokens or context length from thousand to millions." ;
     rdfs:domain :MLModel ;
     rdfs:range xsd:string .
+
+:instrumentUsedBy a owl:ObjectProperty ;
+    rdfs:label "instrumentUsedBy" ;
+    rdfs:comment "Reverse of usedInstrument property." ;
+    rdfs:subPropertyOf :usedBy ;
+    owl:inverseOf :usedInstrument .
 
 :intendedUseCase a owl:DatatypeProperty ;
     rdfs:label "intendedUseCase" ;
@@ -391,10 +391,22 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
             owl:unionOf ( :Dataset :Software ) ] ;
     rdfs:range xsd:string .
 
+:reagentUsedBy a owl:ObjectProperty ;
+    rdfs:label "reagentUsedBy" ;
+    rdfs:comment "Reverse of usedReagent property." ;
+    rdfs:subPropertyOf :usedBy ;
+    owl:inverseOf :usedReagent .
+
 :representedBy a owl:ObjectProperty ;
     rdfs:label "representedBy" ;
     rdfs:comment "Reverse of represents property." ;
     owl:inverseOf :represents .
+
+:sampleUsedBy a owl:ObjectProperty ;
+    rdfs:label "sampleUsedBy" ;
+    rdfs:comment "Reverse of usedSample property." ;
+    rdfs:subPropertyOf :usedBy ;
+    owl:inverseOf :usedSample .
 
 :serviceUsedBy a owl:ObjectProperty ;
     rdfs:label "serviceUsedBy" ;
@@ -428,8 +440,10 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:comment "A container is a digital object that can be defined as packages of software. Instances of containers are accompanied by all necessary dependencies such as specific versions, runtime environment and required libraries for execution." ;
     rdfs:subClassOf :DigitalObject .
 
-:DigitalContent a owl:Class ;
-    rdfs:label "DigitalContent" .
+:Instrument a owl:Class ;
+    rdfs:label "Instrument" ;
+    rdfs:comment "An Instrument is an entity such as a tool, device or equipment that is used in an experiment to perform measurements or manipulations, observations, or other actions." ;
+    rdfs:subClassOf <https://www.w3.org/ns/prov#Entity> .
 
 :Method a owl:Class ;
     rdfs:label "Method" ;
@@ -441,10 +455,20 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:comment "Metadata associated with digital resources that may be packaged together or referenced." ;
     rdfs:subClassOf :DigitalObject .
 
+:Reagent a owl:Class ;
+    rdfs:label "Reagent" ;
+    rdfs:comment "A Reagent is an entity such as chemical substance or biological material that is used to initiate reactions in an experiment." ;
+    rdfs:subClassOf <https://www.w3.org/ns/prov#Entity> .
+
+:Sample a owl:Class ;
+    rdfs:label "Sample" ;
+    rdfs:comment "A sample is an entity such as a biological/physical specimen or material that is being tested in an experiment." ;
+    rdfs:subClassOf <https://www.w3.org/ns/prov#Entity> .
+
 :Schema a owl:Class ;
     rdfs:label "Schema" ;
     rdfs:comment "A semi-structured interpretation of instances of DigitalObjects that can help comprehend the content." ;
-    rdfs:subClassOf :Dataset .
+    rdfs:subClassOf :DigitalObject .
 
 :associatedWith a owl:ObjectProperty ;
     rdfs:label "associatedWith" ;
@@ -459,6 +483,13 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:comment "Instances of DigitalObjects may contain instances of other DigitalObjects." ;
     rdfs:domain :DigitalObject ;
     rdfs:range :DigitalObject .
+
+:contentUrl a owl:DatatypeProperty ;
+    rdfs:label "contentUrl" ;
+    rdfs:comment "The location or URL of the content." ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( :Dataset :Software ) ] ;
+    rdfs:range xsd:string .
 
 :createdBy a owl:ObjectProperty ;
     rdfs:label "createdBy" ;
@@ -486,12 +517,6 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:range <https://www.w3.org/ns/prov#Activity> ;
     rdfs:subPropertyOf :directlySupportedBy .
 
-:hasDistribution a owl:ObjectProperty ;
-    rdfs:label "hasDistribution" ;
-    rdfs:comment "Used to represent different forms of a DigitalObject. An image may be distributed as a JPEG, PNG, or SVG." ;
-    rdfs:domain :DigitalObject ;
-    rdfs:range :Distribution .
-
 :indirectlyChallenges a owl:ObjectProperty ;
     rdfs:label "indirectlyChallenges" ;
     rdfs:comment "The indirectlyChallenges property establishes a relation between instances of DigitalObjects when one indirectly challenges the other entailed by property chaining." ;
@@ -512,6 +537,10 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:domain :DigitalObject ;
     rdfs:range <https://www.w3.org/ns/prov#Entity> .
 
+:schemaFor a owl:ObjectProperty ;
+    rdfs:label "schemaFor" ;
+    rdfs:comment "Reverse of hasSchema property." .
+
 :supportedBy a owl:ObjectProperty ;
     rdfs:label "supportedBy" ;
     rdfs:comment "The supportedBy property is a transitive relation between DigitalObjects." ;
@@ -524,11 +553,32 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
     rdfs:range :Dataset ;
     rdfs:subPropertyOf :used .
 
+:usedInstrument a owl:ObjectProperty ;
+    rdfs:label "usedInstrument" ;
+    rdfs:comment "The property usedInstrument is a subproperty of used where domain is Experiment and range is Instrument." ;
+    rdfs:domain :Experiment ;
+    rdfs:range :Instrument ;
+    rdfs:subPropertyOf :used .
+
 :usedMLModel a owl:ObjectProperty ;
     rdfs:label "usedMLModel" ;
     rdfs:comment "The property usedModel is a subproperty of used where domain is Computation and range is MLModel. This is common in fine-tuning or inference tasks." ;
     rdfs:domain :Computation ;
     rdfs:range :MLModel ;
+    rdfs:subPropertyOf :used .
+
+:usedReagent a owl:ObjectProperty ;
+    rdfs:label "usedReagent" ;
+    rdfs:comment "The property usedReagent is a subproperty of used where domain is Experiment and range is Reagent." ;
+    rdfs:domain :Experiment ;
+    rdfs:range :Reagent ;
+    rdfs:subPropertyOf :used .
+
+:usedSample a owl:ObjectProperty ;
+    rdfs:label "usedSample" ;
+    rdfs:comment "The property usedSample is a subproperty of used where domain is Experiment and range is Sample." ;
+    rdfs:domain :Experiment ;
+    rdfs:range :Sample ;
     rdfs:subPropertyOf :used .
 
 :usedService a owl:ObjectProperty ;
@@ -582,10 +632,10 @@ prov:SoftwareAgent a owl:Class ;
     rdfs:range :DigitalObject ;
     rdfs:subPropertyOf :challenges .
 
-:Distribution a owl:Class ;
-    rdfs:label "Distribution" ;
-    rdfs:comment "The placement of instances of DigitalObjects. A single DigitalObject may be represented in multiple forms, hence resulting in multiple distributions. An Image can be encoded and distributed as any of the JPEG, PNG, SVG." ;
-    rdfs:subClassOf :DigitalObject .
+:Experiment a owl:Class ;
+    rdfs:label "Experiment" ;
+    rdfs:comment "An experiment is an activity where samples are treated with reagents and analyzed using instruments." ;
+    rdfs:subClassOf <https://www.w3.org/ns/prov#Activity> .
 
 :challenges a owl:ObjectProperty ;
     rdfs:label "challenges" ;
@@ -600,6 +650,21 @@ prov:SoftwareAgent a owl:Class ;
     rdfs:domain :DigitalObject ;
     rdfs:range :DigitalObject .
 
+:directlySupportedBy a owl:ObjectProperty ;
+    rdfs:label "directlySupportedBy" ;
+    rdfs:comment "The use of directlySupportedBy property is intended to establish a direct relation between instances of DigitalObjects." ;
+    rdfs:subPropertyOf :supportedBy ;
+    owl:inverseOf :directlySupports .
+
+:directlySupports a owl:ObjectProperty ;
+    rdfs:label "directlySupports" ;
+    rdfs:comment "The directlySupports property is a non-transitive version of supports, a subproperty of supports. directlySupports is a superproperty of the properties attributed (inverse of attributedTo), derived (inverse of derivedFrom), associated (inverse of associatedWith), used, and generated (inverse of generatedBy)." ;
+    rdfs:subPropertyOf :supports .
+
+<https://www.w3.org/ns/prov#Activity> a owl:Class ;
+    rdfs:label "prov:Activity" ;
+    rdfs:comment "An Activity is a process by which an Entity is produced, modified, consumed or used." .
+
 :used a owl:ObjectProperty ;
     rdfs:label "used" ;
     rdfs:comment "An Activity used an Entity, when the Entity (such as a Dataset or a Software) was instrumental in enabling that Activity to occur." ;
@@ -608,44 +673,29 @@ prov:SoftwareAgent a owl:Class ;
     rdfs:subPropertyOf :directlySupportedBy ;
     owl:inverseOf :usedBy .
 
-:directlySupportedBy a owl:ObjectProperty ;
-    rdfs:label "directlySupportedBy" ;
-    rdfs:comment "The use of directlySupportedBy property is intended to establish a direct relation between instances of DigitalObjects." ;
-    rdfs:subPropertyOf :supportedBy ;
-    owl:inverseOf :directlySupports .
+:MLModel a owl:Class ;
+    rdfs:label "MLModel"@en ;
+    rdfs:comment "An MLModel is a computational model that has been trained on data to perform a specific task. It is a digital object that captures the learned parameters and architecture resulting from a machine learning training process (Computation)."@en ;
+    rdfs:subClassOf :DigitalObject .
 
 :usedBy a owl:ObjectProperty ;
     rdfs:label "usedBy" ;
     rdfs:comment "Reverse of used property." ;
     rdfs:subPropertyOf :directlySupports .
 
-<https://www.w3.org/ns/prov#Activity> a owl:Class ;
-    rdfs:label "prov:Activity" ;
-    rdfs:comment "An Activity is a process by which an Entity is produced, modified, consumed or used." .
-
-:directlySupports a owl:ObjectProperty ;
-    rdfs:label "directlySupports" ;
-    rdfs:comment "The directlySupports property is a non-transitive version of supports, a subproperty of supports. directlySupports is a superproperty of the properties attributed (inverse of attributedTo), derived (inverse of derivedFrom), associated (inverse of associatedWith), used, and generated (inverse of generatedBy)." ;
-    rdfs:subPropertyOf :supports .
-
-:MLModel a owl:Class ;
-    rdfs:label "MLModel"@en ;
-    rdfs:comment "An MLModel is a computational model that has been trained on data to perform a specific task. It is a digital object that captures the learned parameters and architecture resulting from a machine learning training process (Computation)."@en ;
-    rdfs:subClassOf :DigitalObject .
-
 <https://www.w3.org/ns/prov#Agent> a owl:Class ;
     rdfs:label "prov:Agent" ;
     rdfs:comment "An Agent is an autonomous Entity. Persons and Organizations are Agents in EVI. Agents may be associatedWith Activities, and Entities may be attributedTo Agents." ;
     rdfs:subClassOf <https://www.w3.org/ns/prov#Entity> .
 
-<https://www.w3.org/ns/prov#Entity> a owl:Class ;
-    rdfs:label "prov:Entity" ;
-    rdfs:comment "An Entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects." .
-
 :Computation a owl:Class ;
     rdfs:label "Computation" ;
     rdfs:comment "Computation is an Activity performed on a Dataset with the help of a Software." ;
     rdfs:subClassOf <https://www.w3.org/ns/prov#Activity> .
+
+<https://www.w3.org/ns/prov#Entity> a owl:Class ;
+    rdfs:label "prov:Entity" ;
+    rdfs:comment "An Entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects." .
 
 :Software a owl:Class ;
     rdfs:label "Software" ;
