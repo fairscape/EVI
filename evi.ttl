@@ -35,7 +35,7 @@ vann:preferredNamespaceUri a owl:AnnotationProperty .
 <http://schema.org/Article> a owl:Class ;
     rdfs:label "schema:Article" ;
     rdfs:comment "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all." ;
-    rdfs:subClassOf :DigitalObject ;
+    rdfs:subClassOf :Document ;
     owl:equivalentClass :Article .
 
 <http://schema.org/Claim> a owl:Class ;
@@ -213,14 +213,14 @@ evi: a owl:NamedIndividual,
         <https://orcid.org/0000-0003-4647-3877> ;
     dcterms:description "The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2)."@en ;
     dcterms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/> ;
-    dcterms:modified "2025-12-05"@en ;
+    dcterms:modified "2026-03-16"@en ;
     dcterms:title "EVI: Evidence Graph Ontology"@en ;
     vann:preferredNamespacePrefix "evi" ;
     vann:preferredNamespaceUri <http://w3id.org/EVI> ;
-    owl:priorVersion "1.2"@en ;
-    owl:versionIRI <https://w3id.org/EVI/1.3>,
+    owl:priorVersion "1.3"@en ;
+    owl:versionIRI <https://w3id.org/EVI/1.4>,
         "http://www.w3.org/2002/07/owl"@en ;
-    owl:versionInfo "1.3"@en .
+    owl:versionInfo "1.4"@en .
 
 :EvidenceGraph a owl:Class ;
     rdfs:label "EvidenceGraph" ;
@@ -255,6 +255,12 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
             owl:unionOf ( :Computation :Dataset :Software ) ] ;
     rdfs:range [ a rdfs:Datatype ;
             owl:unionOf ( xsd:anyURI xsd:string ) ] .
+
+:annotates a owl:ObjectProperty ;
+    rdfs:label "annotates" ;
+    rdfs:comment "The annotates property is used for annotating anything where the domain is an instance of Annotation and the range may be any instance of a concept in the domain." ;
+    rdfs:domain :Annotation ;
+    rdfs:range owl:Thing .
 
 :associateFor a owl:ObjectProperty ;
     rdfs:label "associateFor" ;
@@ -430,10 +436,15 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
 
 <https://orcid.org/0000-0003-4647-3877> a owl:NamedIndividual .
 
+:Annotation a owl:Class ;
+    rdfs:label "Annotation" ;
+    rdfs:comment "Annotation is a Document that comments on or provides interpretibility of an analysis. The analysis could be based on an LLM analysis (or any analysis) of a Computation." ;
+    rdfs:subClassOf :Document .
+
 :Article a owl:Class ;
     rdfs:label "Article" ;
     rdfs:comment "An Article is a (typically compound) textual document conveying a set of Claims and other DigitalObjects. Among these, an Article in EVI always conveys an assertion of its authorship in the form of a bibliographic self-reference." ;
-    rdfs:subClassOf :DigitalObject .
+    rdfs:subClassOf :Document .
 
 :Container a owl:Class ;
     rdfs:label "Container" ;
@@ -631,6 +642,11 @@ prov:SoftwareAgent a owl:Class ;
     rdfs:domain :DigitalObject ;
     rdfs:range :DigitalObject ;
     rdfs:subPropertyOf :challenges .
+
+:Document a owl:Class ;
+    rdfs:label "Document" ;
+    rdfs:comment "A Document is a digital object that contains information intended for human or machine interpretation. As a DigitalObject, it represents any identifiable information resource that can be stored, transmitted, and referenced, serving as the foundational class for a more specific type such as an Annotation." ;
+    rdfs:subClassOf :DigitalObject .
 
 :Experiment a owl:Class ;
     rdfs:label "Experiment" ;

@@ -13,19 +13,19 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/EVI">
-        <owl:versionIRI rdf:resource="https://w3id.org/EVI/1.3"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/EVI/1.4"/>
         <terms:contributor rdf:resource="https://github.com/jniestroy"/>
         <terms:contributor rdf:resource="https://github.com/mlev71"/>
         <terms:created xml:lang="en">2020-07-27</terms:created>
         <terms:description xml:lang="en">The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas&apos; Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2).</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/"/>
-        <terms:modified xml:lang="en">2025-12-05</terms:modified>
+        <terms:modified xml:lang="en">2026-03-16</terms:modified>
         <terms:title xml:lang="en">EVI: Evidence Graph Ontology</terms:title>
         <vann:preferredNamespacePrefix>evi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="http://w3id.org/EVI"/>
-        <owl:priorVersion xml:lang="en">1.2</owl:priorVersion>
+        <owl:priorVersion xml:lang="en">1.3</owl:priorVersion>
         <owl:versionIRI xml:lang="en">http://www.w3.org/2002/07/owl</owl:versionIRI>
-        <owl:versionInfo xml:lang="en">1.3</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">1.4</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -124,6 +124,17 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/creator">
         <rdfs:domain rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/EVI#annotates -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/EVI#annotates">
+        <rdfs:domain rdf:resource="https://w3id.org/EVI#Annotation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>The annotates property is used for annotating anything where the domain is an instance of Annotation and the range may be any instance of a concept in the domain.</rdfs:comment>
+        <rdfs:label>annotates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1088,7 +1099,7 @@ Note that Event uses startDate/endDate instead of startTime/endTime, even when d
 
     <owl:Class rdf:about="http://schema.org/Article">
         <owl:equivalentClass rdf:resource="https://w3id.org/EVI#Article"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#Document"/>
         <rdfs:comment>An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.</rdfs:comment>
         <rdfs:label>schema:Article</rdfs:label>
     </owl:Class>
@@ -1186,10 +1197,20 @@ At this time, Schema.org does not define any types of relationship between claim
     
 
 
+    <!-- https://w3id.org/EVI#Annotation -->
+
+    <owl:Class rdf:about="https://w3id.org/EVI#Annotation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#Document"/>
+        <rdfs:comment>Annotation is a Document that comments on or provides interpretibility of an analysis. The analysis could be based on an LLM analysis (or any analysis) of a Computation.</rdfs:comment>
+        <rdfs:label>Annotation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/EVI#Article -->
 
     <owl:Class rdf:about="https://w3id.org/EVI#Article">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#Document"/>
         <rdfs:comment>An Article is a (typically compound) textual document conveying a set of Claims and other DigitalObjects. Among these, an Article in EVI always conveys an assertion of its authorship in the form of a bibliographic self-reference.</rdfs:comment>
         <rdfs:label>Article</rdfs:label>
     </owl:Class>
@@ -1242,6 +1263,16 @@ At this time, Schema.org does not define any types of relationship between claim
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/prov#Entity"/>
         <rdfs:comment>A DigitalObject is an Entity which represents another Entity. DigitalObjects are always attributedTo an Agent, their creator, contributor, influencer or to an Activity they were generatedBy.</rdfs:comment>
         <rdfs:label>DigitalObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/EVI#Document -->
+
+    <owl:Class rdf:about="https://w3id.org/EVI#Document">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+        <rdfs:comment>A Document is a digital object that contains information intended for human or machine interpretation. As a DigitalObject, it represents any identifiable information resource that can be stored, transmitted, and referenced, serving as the foundational class for a more specific type such as an Annotation.</rdfs:comment>
+        <rdfs:label>Document</rdfs:label>
     </owl:Class>
     
 
