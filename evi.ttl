@@ -213,7 +213,7 @@ evi: a owl:NamedIndividual,
         <https://orcid.org/0000-0003-4647-3877> ;
     dcterms:description "The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2)."@en ;
     dcterms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/> ;
-    dcterms:modified "2026-03-16"@en ;
+    dcterms:modified "2026-03-18"@en ;
     dcterms:title "EVI: Evidence Graph Ontology"@en ;
     vann:preferredNamespacePrefix "evi" ;
     vann:preferredNamespaceUri <http://w3id.org/EVI> ;
@@ -258,9 +258,9 @@ EvidenceGraphs are bipolar argumentation frameworks (Cayrol &amp; Lagasquie-Schi
 
 :annotates a owl:ObjectProperty ;
     rdfs:label "annotates" ;
-    rdfs:comment "The annotates property is used for annotating anything where the domain is an instance of Annotation and the range may be any instance of a concept in the domain." ;
+    rdfs:comment "The annotates property is used for annotating instances of DigitalObjects." ;
     rdfs:domain :Annotation ;
-    rdfs:range owl:Thing .
+    rdfs:range :DigitalObject .
 
 :associateFor a owl:ObjectProperty ;
     rdfs:label "associateFor" ;

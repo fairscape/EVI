@@ -19,7 +19,7 @@
         <terms:created xml:lang="en">2020-07-27</terms:created>
         <terms:description xml:lang="en">The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas&apos; Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2).</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/"/>
-        <terms:modified xml:lang="en">2026-03-16</terms:modified>
+        <terms:modified xml:lang="en">2026-03-18</terms:modified>
         <terms:title xml:lang="en">EVI: Evidence Graph Ontology</terms:title>
         <vann:preferredNamespacePrefix>evi</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="http://w3id.org/EVI"/>
@@ -132,8 +132,8 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/EVI#annotates">
         <rdfs:domain rdf:resource="https://w3id.org/EVI#Annotation"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment>The annotates property is used for annotating anything where the domain is an instance of Annotation and the range may be any instance of a concept in the domain.</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/EVI#DigitalObject"/>
+        <rdfs:comment>The annotates property is used for annotating instances of DigitalObjects.</rdfs:comment>
         <rdfs:label>annotates</rdfs:label>
     </owl:ObjectProperty>
     
