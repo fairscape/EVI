@@ -4,7 +4,8 @@ EVI is a small OWL vocabulary for writing down how a scientific result was produ
 
 It extends [PROV-O](https://www.w3.org/TR/prov-o/) and [Schema.org](https://schema.org/). Current version is **1.6** ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 
-- Specification: https://fairscape.github.io/EVI/
+- Interactive primer: https://fairscape.github.io/EVI/
+- Term specification: https://fairscape.github.io/EVI/reference/
 - Ontology: [`evi.owl`](evi.owl) · `https://w3id.org/EVI`
 - Contact: Sadnan Al Manir (ma3xy@virginia.edu), Tim Clark (twclark@virginia.edu)
 

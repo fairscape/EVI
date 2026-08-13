@@ -1,0 +1,82 @@
+:root {
+  --ink: #1b1b1b;
+  --muted: #5c574e;
+  --line: #ddd4c4;
+  --bg: #f4efe6;
+  --card: #fffdf8;
+  --accent: #1f3b5b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+header {
+  background: var(--accent);
+  color: #fff;
+  padding: 1.7rem 1.4rem 1.3rem;
+}
+header .lede {
+  max-width: 62ch;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  opacity: 0.95;
+}
+.kicker {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin: 0 0 0.4rem;
+}
+h1 {
+  font-family: system-ui, sans-serif;
+  margin: 0 0 0.6rem;
+  font-size: 1.7rem;
+}
+nav a {
+  color: #cde4ff;
+  margin-right: 1rem;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.2rem 1.4rem 3rem;
+}
+ol.lesson {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+ol.lesson li { margin: 0.35rem 0; }
+.hint {
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+#graph {
+  height: 480px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+#detail {
+  min-height: 4.5rem;
+  background: #1c1c1c;
+  color: #f0ead8;
+  padding: 1rem;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  margin: 0 0 1rem;
+}
+code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.92em;
+}
+a { color: var(--accent); }
+header a { color: #cde4ff; }
