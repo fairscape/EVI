@@ -1,57 +1,39 @@
-# Preterm birth-weight correlation (fictional teaching graph).
-# Open this file in any Turtle viewer. Every evi: term is defined in evi.owl.
+# Teaching example: a person, data with a schema, software, and a computation.
+# No Claim, Article, supports, or challenges.
 
 @prefix :        <https://example.org/evi/smith/> .
 @prefix evi:     <https://w3id.org/EVI#> .
 @prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix schema:  <http://schema.org/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 :Mary_Smith a prov:Person ;
     schema:name "Mary Smith" .
 
-:dataset_cohort a evi:Dataset ;
-    schema:name "Preterm infant PMA and birth weight cohort" ;
-    schema:description "Subject identifiers, post-menstrual ages, sex, and birth weights of 1,000 preterm infants." ;
-    evi:createdBy :Mary_Smith .
+:schema_cohort a evi:Schema ;
+    schema:name "Cohort table columns" ;
+    schema:description "subject_id, post_menstrual_age_days, sex, birth_weight_g." .
 
-:software_pearsonr_152 a evi:Software ;
+:dataset_cohort a evi:Dataset ;
+    schema:name "Preterm infant ages and birth weights" ;
+    evi:createdBy :Mary_Smith ;
+    evi:hasSchema :schema_cohort .
+
+:software_pearsonr a evi:Software ;
     schema:name "scipy.stats.pearsonr" ;
     schema:version "1.5.2" .
 
 :computation_corr a evi:Computation ;
-    schema:name "PMA vs birth-weight correlation" ;
-    schema:description "Pearson correlation of post-menstrual age and birth weight, stratified by sex." ;
+    schema:name "Correlate age with birth weight" ;
     evi:associatedWith :Mary_Smith ;
     evi:usedDataset :dataset_cohort ;
-    evi:usedSoftware :software_pearsonr_152 ;
+    evi:usedSoftware :software_pearsonr ;
     evi:generated :dataset_corr .
 
 :dataset_corr a evi:Dataset ;
-    schema:name "PMA–birth-weight correlation results" ;
+    schema:name "Correlation results" ;
     evi:generatedBy :computation_corr ;
-    evi:derivedFrom :dataset_cohort .
+    evi:hasSchema :schema_results .
 
-:image_scatter a evi:Image ;
-    schema:name "Scatterplot of PMA vs birth weight" ;
-    evi:derivedFrom :dataset_corr .
-
-:claim_pma_bw a evi:Claim ;
-    evi:state "Post-conception age was significantly correlated with birth weight." ;
-    evi:derivedFrom :dataset_corr , :image_scatter .
-
-:article_preprint a evi:Article ;
-    dcterms:title "Post-conception age and birth weight" ;
-    evi:createdBy :Mary_Smith ;
-    evi:contains :claim_pma_bw , :image_scatter , :dataset_corr .
-
-# Later: a new software release challenges the version used in the computation.
-:Chad_Jones a prov:Person ;
-    schema:name "Chad Jones" .
-
-:software_pearsonr_160 a evi:Software ;
-    schema:name "scipy.stats.pearsonr" ;
-    schema:version "1.6.0" ;
-    evi:createdBy :Chad_Jones ;
-    evi:directlyChallenges :software_pearsonr_152 .
+:schema_results a evi:Schema ;
+    schema:name "Result table columns" ;
+    schema:description "stratum, n, pearson_r, p_value." .

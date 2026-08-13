@@ -1,6 +1,6 @@
 # EVI: Evidence Graph Ontology
 
-Scientific claims are not facts. They are assertions backed by evidence, and that evidence can be challenged. EVI is a small OWL vocabulary for writing that structure down: a dataset, the software and computation that produced a result, the claim, the article, and later challenges (a retracted paper, a bug in a library, a contaminated reagent).
+EVI is a small OWL vocabulary for writing down how a scientific result was produced: who ran what, on which data, with which software, and what the data’s columns mean.
 
 It extends [PROV-O](https://www.w3.org/TR/prov-o/) and [Schema.org](https://schema.org/). Current version is **1.6** ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 
@@ -10,7 +10,7 @@ It extends [PROV-O](https://www.w3.org/TR/prov-o/) and [Schema.org](https://sche
 
 ## A worked example
 
-Mary Smith correlates post-menstrual age with birth weight in a preterm cohort. The computation uses SciPy 1.5.2. A later SciPy release challenges that software; the challenge sits under the same evidence graph as her claim.
+Mary Smith has a preterm cohort dataset (with a schema for its columns), runs SciPy on it, and gets a result table (also with a schema).
 
 Full file: [`examples/smith-preterm.ttl`](examples/smith-preterm.ttl) (valid Turtle; CI checks it against `evi.owl`).
 
@@ -22,29 +22,23 @@ Full file: [`examples/smith-preterm.ttl`](examples/smith-preterm.ttl) (valid Tur
 
 :Mary_Smith a prov:Person .
 
+:schema_cohort a evi:Schema ;
+    schema:description "subject_id, post_menstrual_age_days, sex, birth_weight_g." .
+
 :dataset_cohort a evi:Dataset ;
-    evi:createdBy :Mary_Smith .
+    evi:createdBy :Mary_Smith ;
+    evi:hasSchema :schema_cohort .
 
 :computation_corr a evi:Computation ;
     evi:associatedWith :Mary_Smith ;
     evi:usedDataset :dataset_cohort ;
-    evi:usedSoftware :software_pearsonr_152 ;
+    evi:usedSoftware :software_pearsonr ;
     evi:generated :dataset_corr .
 
-:claim_pma_bw a evi:Claim ;
-    evi:state "Post-conception age was significantly correlated with birth weight." ;
-    evi:derivedFrom :dataset_corr .
-
-:article_preprint a evi:Article ;
-    evi:createdBy :Mary_Smith ;
-    evi:contains :claim_pma_bw .
-
-:software_pearsonr_160 a evi:Software ;
-    schema:version "1.6.0" ;
-    evi:directlyChallenges :software_pearsonr_152 .
+:dataset_corr a evi:Dataset ;
+    evi:generatedBy :computation_corr ;
+    evi:hasSchema :schema_results .
 ```
-
-`used` / `generatedBy` are subproperties of support, so warrant (and a challenge to the software) can propagate toward the claim.
 
 ## Maintainers
 

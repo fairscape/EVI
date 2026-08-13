@@ -14,7 +14,7 @@ OWL = ROOT / "evi.owl"
 def test_smith_example_parses() -> None:
     graph = Graph()
     graph.parse(EXAMPLE, format="turtle")
-    assert len(graph) > 20
+    assert len(graph) > 15
 
 
 def test_smith_example_uses_only_defined_evi_terms() -> None:
@@ -38,13 +38,12 @@ def test_smith_example_has_the_core_story() -> None:
     text = EXAMPLE.read_text(encoding="utf-8")
     for needle in (
         "evi:Dataset",
+        "evi:Schema",
         "evi:Computation",
         "evi:Software",
-        "evi:Claim",
-        "evi:Article",
+        "evi:hasSchema",
         "evi:usedDataset",
         "evi:usedSoftware",
-        "evi:directlyChallenges",
     ):
         assert needle in text
     assert len(data) > 0
