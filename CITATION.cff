@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "EVI: Evidence Graph Ontology"
+message: If you use EVI, please cite this record and the papers listed below.
+type: software
+license: CC-BY-4.0
+version: "1.6"
+date-released: "2026-08-13"
+url: "https://w3id.org/EVI"
+repository-code: "https://github.com/fairscape/EVI"
+authors:
+  - family-names: Al Manir
+    given-names: Sadnan
+    orcid: "https://orcid.org/0000-0003-4647-3877"
+    affiliation: University of Virginia
+  - family-names: Clark
+    given-names: Timothy
+    orcid: "https://orcid.org/0000-0003-4060-7360"
+    affiliation: University of Virginia

@@ -1,0 +1,30 @@
+name: validate
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -r requirements-dev.txt
+      - name: Test
+        env:
+          PYTHONPATH: scripts
+        run: python -m pytest tests -q
+      - name: Assemble site
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python scripts/serialize.py
+          python scripts/assemble_site.py
+          test -f site/index.html
+          test -f site/versions/v1.4/evi.owl
+          test -f site/evi.ttl

@@ -1,0 +1,40 @@
+# Proposed replacement for https://github.com/perma-id/w3id.org/blob/master/EVI/.htaccess
+# Open a PR there after this repo's gh-pages is published. Not used by GitHub Pages.
+
+Options +FollowSymLinks
+Options -MultiViews
+AddType application/rdf+xml .rdf
+AddType application/rdf+xml .owl
+AddType text/turtle .ttl
+AddType application/n-triples .nt
+AddType application/ld+json .jsonld
+RewriteEngine On
+
+# HTML docs
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^$ https://fairscape.github.io/EVI/index.html [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} application/ld\+json
+RewriteRule ^$ https://fairscape.github.io/EVI/evi.jsonld [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
+RewriteRule ^$ https://fairscape.github.io/EVI/evi.owl [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} application/n-triples
+RewriteRule ^$ https://fairscape.github.io/EVI/evi.nt [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^$ https://fairscape.github.io/EVI/evi.ttl [R=303,L]
+
+# Frozen version IRIs: https://w3id.org/EVI/1.4
+RewriteRule ^([0-9]+(?:\.[0-9]+)*)$ https://fairscape.github.io/EVI/versions/v$1/evi.owl [R=303,L]
+
+RewriteRule ^doc$ https://fairscape.github.io/EVI/ [R=303,L]
+RewriteRule ^$ https://fairscape.github.io/EVI/evi.owl [R=303,L]
