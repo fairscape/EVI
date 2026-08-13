@@ -1,57 +1,53 @@
 # EVI: Evidence Graph Ontology
 
-EVI extends [PROV-O](https://www.w3.org/TR/prov-o/), [Schema.org](https://schema.org/), and [Bioschemas](https://bioschemas.org/profiles/) to describe **evidence for the correctness of findings** in biomedical research. Claims are treated as defeasible: support and challenge relations form a directed evidence graph.
+Scientific claims are not facts. They are assertions backed by evidence, and that evidence can be challenged. EVI is a small OWL vocabulary for writing that structure down: a dataset, the software and computation that produced a result, the claim, the article, and later challenges (a retracted paper, a bug in a library, a contaminated reagent).
 
-| | |
-|---|---|
-| Ontology IRI | `https://w3id.org/EVI` |
-| Current version | **1.6** (`https://w3id.org/EVI/1.6`) |
-| License | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Docs | https://fairscape.github.io/EVI/ |
-| OWL | [`evi.owl`](evi.owl) |
+It extends [PROV-O](https://www.w3.org/TR/prov-o/) and [Schema.org](https://schema.org/). Current version is **1.6** ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 
-Contact: Sadnan Al Manir (ma3xy@virginia.edu), Tim Clark (twclark@virginia.edu).
+- Specification: https://fairscape.github.io/EVI/
+- Ontology: [`evi.owl`](evi.owl) · `https://w3id.org/EVI`
+- Contact: Sadnan Al Manir (ma3xy@virginia.edu), Tim Clark (twclark@virginia.edu)
 
-## Repository layout
+## A worked example
 
-```
-evi.owl                      current ontology (edit this)
-Ontology/versions/vX.Y/      frozen snapshots — never edit after release
-docs/figures/vX.Y/           semantic-model figure for that version
-docs/templates/index.html    documentation page (WIDOCO-based)
-scripts/release.sh           freeze a version + serialize + test
-.github/workflows/           validate on PR; publish gh-pages on tag
-```
+Mary Smith correlates post-menstrual age with birth weight in a preterm cohort. The computation uses SciPy 1.5.2. A later SciPy release challenges that software; the challenge sits under the same evidence graph as her claim.
 
-`gh-pages` is generated. Do not hand-edit it.
+Full file: [`examples/smith-preterm.ttl`](examples/smith-preterm.ttl) (valid Turtle; CI checks it against `evi.owl`).
 
-## Edit and release
+```turtle
+@prefix :     <https://example.org/evi/smith/> .
+@prefix evi:  <https://w3id.org/EVI#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
 
-1. Change `evi.owl` (Protégé or a text editor).
-2. Update `docs/figures/v<new>/` from the previous `.drawio`, **or** skip a new drawing and pass `--copy-figure`.
-3. Freeze:
+:Mary_Smith a prov:Person .
 
-   ```bash
-   python3 -m venv .venv
-   .venv/bin/pip install -r requirements-dev.txt
-   ./scripts/release.sh 1.7            # or: ./scripts/release.sh 1.7 --copy-figure
-   ```
+:dataset_cohort a evi:Dataset ;
+    evi:createdBy :Mary_Smith .
 
-   That script refuses to overwrite an existing `Ontology/versions/v1.7/`, writes serializations, and runs the tests that require each snapshot’s `versionInfo` to match its folder name.
+:computation_corr a evi:Computation ;
+    evi:associatedWith :Mary_Smith ;
+    evi:usedDataset :dataset_cohort ;
+    evi:usedSoftware :software_pearsonr_152 ;
+    evi:generated :dataset_corr .
 
-4. Review, commit, tag `v1.7`. Pushing the tag publishes the site. Do not push until you intend to.
+:claim_pma_bw a evi:Claim ;
+    evi:state "Post-conception age was significantly correlated with birth weight." ;
+    evi:derivedFrom :dataset_corr .
 
-Older `Ontology/versions/v*` files are immutable. The v1.4 folder was once overwritten in place; tests now fail if that happens again.
+:article_preprint a evi:Article ;
+    evi:createdBy :Mary_Smith ;
+    evi:contains :claim_pma_bw .
 
-## Local docs preview
-
-```bash
-make site
-python3 -m http.server 8770 --directory site
+:software_pearsonr_160 a evi:Software ;
+    schema:version "1.6.0" ;
+    evi:directlyChallenges :software_pearsonr_152 .
 ```
 
-Then open http://127.0.0.1:8770/ — Current / Previous version, the figure, and `/versions/` are local.
+`used` / `generatedBy` are subproperties of support, so warrant (and a challenge to the software) can propagate toward the claim.
 
-## Version IRIs
+## Maintainers
 
-After the site is published, [w3id.org/EVI](https://github.com/perma-id/w3id.org/tree/master/EVI) should redirect `https://w3id.org/EVI/1.6` to this repo’s snapshot. A ready-to-submit rules file is [`docs/w3id.htaccess.example`](docs/w3id.htaccess.example). That change lives in the perma-id repository, not here.
+Edit `evi.owl` in Protégé. To freeze a version: `./scripts/release.sh 1.7` (or `--copy-figure` if the diagram is unchanged). That writes `Ontology/versions/v1.7/`, runs tests, and refuses to overwrite an older snapshot. Tag `v1.7` to publish the docs site. Do not edit `gh-pages` or existing version folders by hand.
+
+Details: [`docs/RELEASE.md`](docs/RELEASE.md) · [`CHANGELOG.md`](CHANGELOG.md)

@@ -29,3 +29,4 @@ def test_assemble_site(tmp_path: Path) -> None:
     v14 = (dest / "versions" / "v1.4" / "evi.owl").read_text(encoding="utf-8")
     assert extract_version_info(v14) == "1.4"
     assert 'href="https://orcid.org/0000-0003-4647-3877">Sadnan' in html
+    assert (dest / "examples" / "smith-preterm.ttl").exists()

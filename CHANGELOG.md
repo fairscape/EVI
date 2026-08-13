@@ -12,6 +12,7 @@ Production cleanup. No new classes.
 - `supports` / `supportedBy` no longer force DigitalObject-only domain and range (so `used` / `generatedBy` through Activities stay coherent). `supportedBy` is transitive.
 - Creator ORCIDs labelled; comments and typos fixed.
 - Release automation, version-integrity tests, generated documentation site.
+- Teaching example: `examples/smith-preterm.ttl` (checked in CI).
 
 ## 1.5 — 2026-04-25
 

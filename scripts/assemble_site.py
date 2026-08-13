@@ -10,6 +10,7 @@ from pathlib import Path
 
 from evi_release import (
     DOCS_DIR,
+    EXAMPLES_DIR,
     FIGURES_DIR,
     OWL_PATH,
     SERIAL_DIR,
@@ -240,6 +241,9 @@ def assemble(dest: Path) -> str:
     current_folder = folder_for(version)
     if current_folder.exists():
         _copy(OWL_PATH, dest / "versions" / f"v{version}" / "evi.owl")
+
+    if EXAMPLES_DIR.is_dir():
+        _copy(EXAMPLES_DIR, dest / "examples")
 
     return version
 

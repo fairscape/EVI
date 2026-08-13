@@ -12,6 +12,7 @@ FIGURES_DIR = ROOT / "docs" / "figures"
 SERIAL_DIR = ROOT / "serializations"
 SITE_DIR = ROOT / "site"
 DOCS_DIR = ROOT / "docs"
+EXAMPLES_DIR = ROOT / "examples"
 
 ONTOLOGY_IRI = "https://w3id.org/EVI"
 NS = "https://w3id.org/EVI#"
