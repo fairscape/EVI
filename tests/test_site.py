@@ -19,12 +19,14 @@ def test_assemble_site(tmp_path: Path) -> None:
     primer = (dest / "index.html").read_text(encoding="utf-8")
     assert "primer.js" in primer
     assert "examples/smith-preterm.ttl" in primer
+    assert "treats that provenance as evidence" in primer
     assert (dest / "primer.js").exists()
     assert (dest / "examples" / "smith-preterm.ttl").exists()
 
     spec = (dest / "reference" / "index.html").read_text(encoding="utf-8")
     assert f"versions/v{version}/" in spec
     assert 'href="https://orcid.org/0000-0003-4647-3877">Sadnan' in spec
+    assert "treats that provenance as evidence" in spec
     assert (dest / "evi.owl").exists()
     assert (dest / "versions" / "v1.4" / "evi.owl").exists()
     assert (dest / "versions" / f"v{version}" / "evi.owl").exists()

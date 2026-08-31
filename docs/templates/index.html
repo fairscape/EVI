@@ -13,7 +13,7 @@
 
     <!-- SCHEMA.ORG METADATA -->
     <script
-        type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/EVI","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/EVI","name":"EVI: Evidence Graph Ontology", "headline":"The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2).", "datePublished":"2020-07-27", "version":"0.1", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"https://datascience.virginia.edu/people/tim-clark","url":"https://datascience.virginia.edu/people/tim-clark"},{"@type":"Person","name":"https://github.com/sadnanalmanir","url":"https://github.com/sadnanalmanir"}], "contributor":[{"@type":"Person","name":"https://github.com/jniestroy","url":"https://github.com/jniestroy"},{"@type":"Person","name":"https://github.com/mlev71","url":"https://github.com/mlev71"}]}</script>
+        type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/EVI","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/EVI","name":"EVI: Evidence Graph Ontology", "headline":"EVI records how a scientific result was produced — who ran which computation, on which dataset, with which software — and treats that provenance as evidence.", "datePublished":"2020-07-27", "version":"0.1", "license":"http://creativecommons.org/licenses/by-nc-sa/2.0/", "author":[{"@type":"Person","name":"https://datascience.virginia.edu/people/tim-clark","url":"https://datascience.virginia.edu/people/tim-clark"},{"@type":"Person","name":"https://github.com/sadnanalmanir","url":"https://github.com/sadnanalmanir"}], "contributor":[{"@type":"Person","name":"https://github.com/jniestroy","url":"https://github.com/jniestroy"},{"@type":"Person","name":"https://github.com/mlev71","url":"https://github.com/mlev71"}]}</script>
 
     <script src="resources/jquery.js"></script>
     <script src="resources/marked.min.js"></script>
@@ -132,10 +132,12 @@
         <div id="abstract">
             <h2>Abstract</h2>
             <span class="markdown">
-                The Evidence Graph Ontology (EVI) extends core concepts from the W3C
-                Provenance Ontology <a href="#PROV-O">[PROV-O]</a> to describe evidence
-                for correctness of findings in biomedical publications. The semantic data
-                model in EVI is expressed using OWL2 Web Ontology Language.
+                EVI records how a scientific result was produced — who ran which
+                computation, on which dataset, with which software — and treats that
+                provenance as evidence. It extends W3C <a href="#PROV-O">PROV-O</a> and
+                Schema.org. Support and challenge relations can connect those records so a
+                defect in data, software, or method can be traced to the findings that
+                depend on them.
             </span>
             <p style="text-align: center;"><span>The OWL encoding of EVI is available
                     <a href="https://github.com/fairscape/EVI/blob/master/evi.owl">here</a>.</span></p>

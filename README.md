@@ -1,6 +1,6 @@
 # EVI: Evidence Graph Ontology
 
-EVI is a small OWL vocabulary for writing down how a scientific result was produced: who ran what, on which data, with which software, and what the data’s columns mean.
+EVI records how a scientific result was produced — who ran which computation, on which dataset, with which software — and treats that provenance as evidence.
 
 It extends [PROV-O](https://www.w3.org/TR/prov-o/) and [Schema.org](https://schema.org/). Current version is **1.6** ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 

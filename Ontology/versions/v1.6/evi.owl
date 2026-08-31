@@ -18,7 +18,7 @@
         <owl:backwardCompatibleWith rdf:resource="https://w3id.org/EVI/1.5"/>
         <owl:versionInfo xml:lang="en">1.6</owl:versionInfo>
         <terms:title xml:lang="en">EVI: Evidence Graph Ontology</terms:title>
-        <terms:description xml:lang="en">The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O, Schema.org, and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2).</terms:description>
+        <terms:description xml:lang="en">EVI records how a scientific result was produced — who ran which computation, on which dataset, with which software — and treats that provenance as evidence. It extends W3C PROV-O and Schema.org. Support and challenge relations can connect those records so a defect in data, software, or method can be traced to the findings that depend on them.</terms:description>
         <terms:created xml:lang="en">2020-07-27</terms:created>
         <terms:modified xml:lang="en">2026-08-13</terms:modified>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>

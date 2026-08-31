@@ -8,27 +8,51 @@
 </head>
 <body>
   <header>
-    <p class="kicker">EVI 1.6</p>
-    <h1>Evidence Graph Ontology</h1>
-    <p class="lede">Someone produced a dataset, said what its columns mean, and ran software on it. EVI writes that down.</p>
-    <nav>
-      <a href="examples/smith-preterm.ttl">Turtle</a>
-      <a href="reference/">Full specification</a>
-      <a href="evi.owl">OWL</a>
-      <a href="https://github.com/fairscape/EVI">GitHub</a>
-    </nav>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="kicker">Version 1.6 · CC BY 4.0</span>
+        <h1>EVI</h1>
+        <p class="sub">Evidence Graph Ontology</p>
+      </div>
+      <nav>
+        <a href="examples/smith-preterm.ttl">Example Turtle</a>
+        <a href="reference/">Specification</a>
+        <a href="evi.owl">OWL</a>
+        <a href="https://github.com/fairscape/EVI">GitHub</a>
+      </nav>
+    </div>
+    <p class="abstract" id="abstract">
+      EVI records how a scientific result was produced — who ran which computation,
+      on which dataset, with which software — and treats that provenance as evidence.
+      It extends W3C PROV-O and Schema.org. Support and challenge relations can connect
+      those records so a defect in data, software, or method can be traced to the
+      findings that depend on them.
+    </p>
   </header>
+
   <main>
-    <ol class="lesson">
-      <li>Mary created a <strong>dataset</strong>.</li>
-      <li>That dataset <em>has a schema</em> (the columns: age, sex, birth weight).</li>
-      <li>A <strong>computation</strong> she ran <em>used</em> that dataset and SciPy.</li>
-      <li>The computation <em>generated</em> a result dataset, which also has a schema.</li>
-    </ol>
-    <p class="hint">The graph is built from <code>examples/smith-preterm.ttl</code>. Click a box.</p>
-    <div id="graph" role="img" aria-label="EVI teaching example graph"></div>
-    <pre id="detail">Click a node to see its triples.</pre>
-    <p class="hint"><a href="examples/smith-preterm.ttl">Download the Turtle</a> · <a href="reference/">Term-by-term specification</a></p>
+    <section class="stage">
+      <aside>
+        <h2>A worked example</h2>
+        <ol class="lesson">
+          <li>Mary created a <strong>dataset</strong>.</li>
+          <li>The dataset <em>has a schema</em> (age, sex, birth weight).</li>
+          <li>Her <strong>computation</strong> <em>used</em> that dataset and SciPy.</li>
+          <li>It <em>generated</em> a result dataset, which also has a schema.</li>
+        </ol>
+        <ul class="legend" id="legend"></ul>
+        <p class="hint">Click a node to inspect its triples. The picture is built from the Turtle file — not a separate drawing.</p>
+      </aside>
+      <div class="canvas">
+        <div id="graph" role="img" aria-label="EVI teaching example graph"></div>
+        <pre id="detail">Click a node.</pre>
+      </div>
+    </section>
+    <p class="footer-links">
+      <a href="examples/smith-preterm.ttl">Download Turtle</a>
+      ·
+      <a href="reference/">Term-by-term specification</a>
+    </p>
   </main>
   <script src="https://unpkg.com/n3/browser/n3.min.js"></script>
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>

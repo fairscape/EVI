@@ -13,6 +13,7 @@ Production cleanup. No new classes.
 - Creator ORCIDs labelled; comments and typos fixed.
 - Release automation, version-integrity tests, generated documentation site.
 - Teaching example: `examples/smith-preterm.ttl` (checked in CI). Dataset + schema + computation; no Claim/Article.
+- Abstract restated around provenance-as-evidence; primer homepage restyled. The version number remains 1.6.
 
 ## 1.5 — 2026-04-25
 
