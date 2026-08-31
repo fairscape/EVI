@@ -42,17 +42,6 @@ def _legacy_image_dir(version: str) -> str:
     return "v" + "".join(parts)
 
 
-def _rebase_reference(html: str) -> str:
-    """WIDOCO lives in /reference/; point assets and version links one level up."""
-    html = html.replace('href="resources/', 'href="../resources/')
-    html = html.replace('src="resources/', 'src="../resources/')
-    html = html.replace('href="versions/', 'href="../versions/')
-    html = html.replace('href="evi.', 'href="../evi.')
-    html = html.replace('href="examples/', 'href="../examples/')
-    html = html.replace('href="index.html', 'href="../index.html')
-    return html
-
-
 def _patch_index(html: str, version: str, prior: str | None, modified: str) -> str:
     html = re.sub(
         r"<h2>Release [^<]+</h2>",
@@ -76,7 +65,7 @@ def _patch_index(html: str, version: str, prior: str | None, modified: str) -> s
     if "Version archive:" not in html:
         html = html.replace(
             "<dt>Authors:</dt>",
-            '<dt>Version archive:</dt>\n                <dd><a href="../versions/">all published versions</a></dd>\n                <dt>Authors:</dt>',
+            '<dt>Version archive:</dt>\n                <dd><a href="versions/">all published versions</a></dd>\n                <dt>Authors:</dt>',
             1,
         )
     html = html.replace(
@@ -98,21 +87,13 @@ def _patch_index(html: str, version: str, prior: str | None, modified: str) -> s
     )
     figure = find_figure(version)
     if figure:
-        dest = f"../resources/images/{_legacy_image_dir(version)}/{figure.name}"
+        dest = f"resources/images/{_legacy_image_dir(version)}/{figure.name}"
         html = re.sub(
             r'src="(?:\.\./)?resources/images/v[0-9]+/[^"]+\.svg"',
             f'src="{dest}"',
             html,
             count=1,
         )
-    banner = (
-        '<div id="spec-banner" style="background:#1f3b5b;color:#fff;padding:10px 18px;'
-        'font-family:system-ui,sans-serif;font-size:14px;">'
-        '<a href="../" style="color:#cde4ff;">Interactive primer</a>'
-        ' · term-by-term specification</div>\n'
-    )
-    if 'id="spec-banner"' not in html:
-        html = html.replace("<body>", "<body>\n" + banner, 1)
     return html
 
 
@@ -189,18 +170,9 @@ def assemble(dest: Path) -> str:
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
 
-    primer = DOCS_DIR / "primer"
-    if not (primer / "index.html").exists():
-        raise SystemExit(f"missing primer at {primer}")
-    _copy(primer / "index.html", dest / "index.html")
-    _copy(primer / "primer.css", dest / "primer.css")
-    _copy(primer / "primer.js", dest / "primer.js")
-
     template = DOCS_DIR / "templates" / "index.html"
     html = _patch_index(template.read_text(encoding="utf-8"), version, prior, modified)
-    html = _rebase_reference(html)
-    (dest / "reference").mkdir(parents=True)
-    (dest / "reference" / "index.html").write_text(html, encoding="utf-8")
+    (dest / "index.html").write_text(html, encoding="utf-8")
 
     # Static assets
     for name in ("extra.css", "owl.css", "primer.css", "rec.css", "jquery.js", "marked.min.js"):

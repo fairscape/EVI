@@ -16,17 +16,16 @@ def test_assemble_site(tmp_path: Path) -> None:
     current = extract_version_info((ROOT / "evi.owl").read_text(encoding="utf-8"))
     assert version == current
     assert (dest / "index.html").exists()
-    primer = (dest / "index.html").read_text(encoding="utf-8")
-    assert "primer.js" in primer
-    assert "examples/smith-preterm.ttl" in primer
-    assert "treats that provenance as evidence" in primer
-    assert (dest / "primer.js").exists()
-    assert (dest / "examples" / "smith-preterm.ttl").exists()
-
-    spec = (dest / "reference" / "index.html").read_text(encoding="utf-8")
+    spec = (dest / "index.html").read_text(encoding="utf-8")
+    assert "primer.js" not in spec
+    assert not (dest / "primer.js").exists()
+    assert not (dest / "reference").exists()
     assert f"versions/v{version}/" in spec
     assert 'href="https://orcid.org/0000-0003-4647-3877">Sadnan' in spec
-    assert "treats that provenance as evidence" in spec
+    assert "what evidence currently bears on its correctness" in spec
+    assert 'href="evi.owl"' in spec
+    assert "github.com/fairscape/EVI" in spec
+    assert (dest / "examples" / "smith-preterm.ttl").exists()
     assert (dest / "evi.owl").exists()
     assert (dest / "versions" / "v1.4" / "evi.owl").exists()
     assert (dest / "versions" / f"v{version}" / "evi.owl").exists()
