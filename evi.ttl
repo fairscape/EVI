@@ -206,7 +206,7 @@ swrla:isRuleEnabled a owl:AnnotationProperty .
     dcterms:created "2020-07-27"@en ;
     dcterms:creator <https://orcid.org/0000-0003-4060-7360>,
         <https://orcid.org/0000-0003-4647-3877> ;
-    dcterms:description "The Evidence Graph ontology extends core concepts from the W3C Provenance Ontology PROV-O, Schema.org, and Bioschemas' Profiles to describe evidence for correctness of findings in biomedical publications. The semantic data model in EVI is expressed using OWL2 Web Ontology Language (OWL2)."@en ;
+    dcterms:description "EVI records how a scientific result was produced — who ran which computation, on which dataset, with which software — and treats that provenance as evidence. It extends W3C PROV-O and Schema.org. Support and challenge relations can connect those records so a defect in data, software, or method can be traced to the findings that depend on them."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:modified "2026-08-13"@en ;
     dcterms:title "EVI: Evidence Graph Ontology"@en ;

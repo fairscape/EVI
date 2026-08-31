@@ -7,20 +7,21 @@
   const PROV_PERSON = "http://www.w3.org/ns/prov#Person";
 
   const TYPES = {
-    [PROV_PERSON]: { kind: "Person", color: "#6b4f2a" },
-    [EVI + "Dataset"]: { kind: "Dataset", color: "#2a5f7a" },
-    [EVI + "Schema"]: { kind: "Schema", color: "#4a6b7a" },
-    [EVI + "Software"]: { kind: "Software", color: "#3d6b4f" },
-    [EVI + "Computation"]: { kind: "Computation", color: "#7a4a2a" },
+    [PROV_PERSON]: { kind: "Person", color: "#c45c26", level: 0 },
+    [EVI + "Dataset"]: { kind: "Dataset", color: "#0f5c6b", level: 1 },
+    [EVI + "Schema"]: { kind: "Schema", color: "#3d6b4f", level: 2 },
+    [EVI + "Software"]: { kind: "Software", color: "#355f8a", level: 1 },
+    [EVI + "Computation"]: { kind: "Computation", color: "#6b3d5c", level: 3 },
   };
 
+  // Display direction: story reads left-to-right (agent → data/software → run → result).
   const EDGES = {
-    [EVI + "createdBy"]: "createdBy",
-    [EVI + "associatedWith"]: "associatedWith",
-    [EVI + "usedDataset"]: "usedDataset",
-    [EVI + "usedSoftware"]: "usedSoftware",
-    [EVI + "generated"]: "generated",
-    [EVI + "hasSchema"]: "hasSchema",
+    [EVI + "createdBy"]: { label: "created", reverse: true },
+    [EVI + "associatedWith"]: { label: "ran", reverse: true },
+    [EVI + "usedDataset"]: { label: "used dataset" },
+    [EVI + "usedSoftware"]: { label: "used software" },
+    [EVI + "generated"]: { label: "generated" },
+    [EVI + "hasSchema"]: { label: "has schema" },
   };
 
   function localName(iri) {
@@ -35,8 +36,13 @@
     return String(value);
   }
 
+  function iri(term) {
+    return term.id || term.value;
+  }
+
   async function main() {
     const detail = document.getElementById("detail");
+    const legend = document.getElementById("legend");
     const res = await fetch("examples/smith-preterm.ttl");
     if (!res.ok) {
       detail.textContent = "Could not load examples/smith-preterm.ttl";
@@ -47,57 +53,71 @@
 
     const bySubject = new Map();
     for (const q of quads) {
-      const s = q.subject.id || q.subject.value;
+      const s = iri(q.subject);
       if (!bySubject.has(s)) bySubject.set(s, []);
       bySubject.get(s).push(q);
     }
 
+    const seenKinds = [];
     const nodes = [];
     const triples = {};
+    const typeOf = {};
     for (const [s, qs] of bySubject) {
       let meta = null;
       let label = localName(s);
       for (const q of qs) {
-        const p = q.predicate.id || q.predicate.value;
-        const o = q.object.id || q.object.value;
+        const p = iri(q.predicate);
+        const o = iri(q.object);
         if (p === RDF + "type" && TYPES[o]) meta = TYPES[o];
         if (p === SCHEMA + "name" || p === DCT + "title") label = literal(q.object);
-        if (p === EVI + "state") label = literal(q.object);
       }
       triples[s] = qs.map((q) => {
-        const p = localName(q.predicate.id || q.predicate.value);
+        const p = localName(iri(q.predicate));
         const o = q.object.termType === "Literal"
           ? JSON.stringify(literal(q.object))
-          : localName(q.object.id || q.object.value);
+          : localName(iri(q.object));
         return localName(s) + "  " + p + "  " + o;
       });
       if (!meta) continue;
+      typeOf[s] = meta.kind;
+      if (!seenKinds.some((k) => k.kind === meta.kind)) seenKinds.push(meta);
+      const level = meta.kind === "Dataset" && /corr|result/i.test(label) ? 4 : meta.level;
       nodes.push({
         id: s,
-        label: label + "\n(" + meta.kind + ")",
-        color: meta.color,
-        font: { color: "#fff", size: 14, face: "system-ui" },
+        label: label + "\n" + meta.kind,
+        color: { background: meta.color, border: meta.color, highlight: { background: "#14202b", border: "#c45c26" } },
+        font: { color: "#fff", size: 13, face: "system-ui", multi: true },
         shape: "box",
-        margin: 12,
+        margin: 14,
+        level: level,
       });
+    }
+
+    if (legend) {
+      legend.innerHTML = seenKinds.map((m) =>
+        "<li><span class=\"swatch\" style=\"background:" + m.color + "\"></span>" + m.kind + "</li>"
+      ).join("");
     }
 
     const nodeIds = new Set(nodes.map((n) => n.id));
     const edges = [];
     for (const q of quads) {
-      const p = q.predicate.id || q.predicate.value;
-      const label = EDGES[p];
-      if (!label) continue;
-      const s = q.subject.id || q.subject.value;
-      const o = q.object.id || q.object.value;
+      const spec = EDGES[iri(q.predicate)];
+      if (!spec) continue;
+      let s = iri(q.subject);
+      let o = iri(q.object);
+      if (spec.reverse) {
+        const tmp = s; s = o; o = tmp;
+      }
       if (!nodeIds.has(s) || !nodeIds.has(o)) continue;
       edges.push({
         from: s,
         to: o,
-        label: label,
+        label: spec.label,
         arrows: "to",
-        color: { color: "#1f3b5b" },
-        font: { align: "middle", size: 12, face: "system-ui" },
+        color: { color: "#5b6570", highlight: "#c45c26" },
+        font: { align: "middle", size: 11, face: "system-ui", color: "#5b6570" },
+        width: 1.4,
       });
     }
 
@@ -105,9 +125,19 @@
       document.getElementById("graph"),
       { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) },
       {
-        physics: { barnesHut: { gravitationalConstant: -12000, springLength: 180 } },
-        edges: { smooth: { type: "cubicBezier" } },
-        interaction: { hover: true },
+        layout: {
+          hierarchical: {
+            enabled: true,
+            direction: "LR",
+            sortMethod: "directed",
+            levelSeparation: 170,
+            nodeSpacing: 90,
+            treeSpacing: 80,
+          },
+        },
+        physics: false,
+        edges: { smooth: { type: "cubicBezier", forceDirection: "horizontal", roundness: 0.4 } },
+        interaction: { hover: true, dragNodes: true },
       }
     );
     net.on("click", (params) => {
